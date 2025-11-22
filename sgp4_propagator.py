@@ -153,18 +153,54 @@ def main():
         print(f"Velocity (km/s): Vx={vel[0]:.4f}, Vy={vel[1]:.4f}, Vz={vel[2]:.4f}")
         print(f"Altitude: {np.linalg.norm(pos) - 6371:.2f} km")
 
-    # Example: Time range propagation
-    print("\n--- 1-Hour Trajectory (10-min steps) ---")
-    sample = propagator.search_satellites("STARLINK")
-    sat = sample[0] if sample else list(propagator.satellites.values())[0]
-    print(f"Satellite: {sat.name}")
+    # Propagate ALL satellites for 72 hours at 1-hour intervals
+    print("\n--- All Satellites: 72-Hour Propagation (1-hour steps) ---")
+    print(f"Total satellites: {len(propagator.satellites)}")
 
-    trajectory = propagator.propagate_range(sat, now, now + timedelta(hours=1), step_minutes=10)
-    for point in trajectory:
-        t = point['time'].split('T')[1][:8]
-        alt = point['altitude_km']
-        speed = np.linalg.norm(point['velocity_km_s'])
-        print(f"  {t} | Alt: {alt:.2f} km | Speed: {speed:.4f} km/s")
+    import csv
+    output_file = "data/all_satellites_72h.csv"
+
+    # Generate time steps (72 hours, 1-hour intervals = 73 points)
+    time_steps = []
+    current = now
+    for _ in range(73):
+        time_steps.append(current)
+        current += timedelta(hours=1)
+
+    print(f"Time range: {time_steps[0].isoformat()} to {time_steps[-1].isoformat()}")
+    print(f"Total time points: {len(time_steps)}")
+
+    # Write all satellite states to CSV
+    with open(output_file, 'w', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(['satellite_name', 'catalog_number', 'time', 'x_km', 'y_km', 'z_km',
+                        'vx_km_s', 'vy_km_s', 'vz_km_s', 'altitude_km'])
+
+        total_rows = 0
+        failed_count = 0
+
+        for idx, (cat_num, sat) in enumerate(propagator.satellites.items()):
+            if (idx + 1) % 1000 == 0:
+                print(f"Processing satellite {idx + 1}/{len(propagator.satellites)}...")
+
+            for dt in time_steps:
+                try:
+                    pos, vel = propagator.propagate(sat, dt)
+                    writer.writerow([
+                        sat.name,
+                        cat_num,
+                        dt.isoformat(),
+                        pos[0], pos[1], pos[2],
+                        vel[0], vel[1], vel[2],
+                        np.linalg.norm(pos) - 6371.0
+                    ])
+                    total_rows += 1
+                except ValueError:
+                    failed_count += 1
+
+    print(f"Saved {total_rows} data points to {output_file}")
+    if failed_count > 0:
+        print(f"Failed propagations: {failed_count}")
 
     print("\n" + "=" * 60)
 
