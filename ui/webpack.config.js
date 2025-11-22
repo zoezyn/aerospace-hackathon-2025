@@ -58,6 +58,11 @@ module.exports = {
           from: path.join(cesiumSource, "Widgets"),
           to: `${cesiumBaseUrl}/Widgets`,
         },
+        {
+          from: "SampleData",
+          to: "SampleData",
+          noErrorOnMissing: true,
+        },
       ],
     }),
     new webpack.DefinePlugin({

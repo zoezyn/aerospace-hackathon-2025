@@ -1,33 +1,62 @@
-import {
-  Viewer,
-  Cartesian3,
-  Math,
-  Terrain,
-  Ion,
-  createOsmBuildingsAsync,
-} from "cesium";
+import * as Cesium from "cesium";
+import Sandcastle from "./Sandcastle.js";
 import "cesium/Build/Cesium/Widgets/widgets.css";
 import "./css/main.css";
 
 // CesiumJS has a default access token built in but it's not meant for active use.
 // please set your own access token can be found at: https://cesium.com/ion/tokens.
-Ion.defaultAccessToken = "put_your_ion_token_here"
+Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJjYjVmMTE4NS05ZWFiLTQxNWYtYTNmZi02ZmZjYTU5NTk1NGMiLCJpZCI6MzYyODExLCJpYXQiOjE3NjM4MTYwOTV9.muT85OaoLIY82MPNIemVvKXAQrT6EC-BD9QQE9YEa4A";
 
-// Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
-const viewer = new Viewer("cesiumContainer", {
-  terrain: Terrain.fromWorldTerrain(),
+// Initialize the Cesium Viewer
+const viewer = new Cesium.Viewer("cesiumContainer", {
+  shouldAnimate: true,
 });
 
-// Add Cesium OSM Buildings, a global 3D buildings layer.
-createOsmBuildingsAsync().then((osmBuildingsTileset) => {
-  viewer.scene.primitives.add(osmBuildingsTileset);
+viewer.scene.moon.show = true;
+viewer.scene.sun.show = true;
+viewer.scene.globe.enableLighting = true;
+// viewer.scene.globe.baseColor = Cesium.Color.BLACK;
+
+// Add Satellites button
+Sandcastle.addDefaultToolbarButton("Satellites", function () {
+  viewer.dataSources.add(
+    Cesium.CzmlDataSource.load("SampleData/simple.czml")
+  );
+  viewer.camera.flyHome(8);
 });
 
-// Fly the camera to San Francisco at the given longitude, latitude, and height.
-viewer.camera.flyTo({
-  destination: Cartesian3.fromDegrees(-122.4175, 37.655, 400),
-  orientation: {
-    heading: Math.toRadians(0.0),
-    pitch: Math.toRadians(-15.0),
-  },
+// Add Vehicle button
+Sandcastle.addToolbarButton("Vehicle", function () {
+  viewer.dataSources.add(
+    Cesium.CzmlDataSource.load("SampleData/Vehicle.czml")
+  );
+  viewer.scene.camera.setView({
+    destination: Cesium.Cartesian3.fromDegrees(-116.52, 35.02, 95000),
+    orientation: {
+      heading: 6,
+    },
+  });
 });
+
+// Add Reset button
+Sandcastle.addToolbarButton("Reset", function () {
+  viewer.dataSources.removeAll();
+  viewer.camera.flyHome(0);
+});
+
+// Add a custom button
+Sandcastle.addToolbarButton("New Button", function () {
+  console.log("New Button clicked!");
+});
+
+// Add a toggle button
+let toggleValue1 = true;
+Sandcastle.addToggleButton("Toggle Animation", toggleValue1, function (checked) {
+  toggleValue1 = checked;
+  viewer.clock.shouldAnimate = checked;
+});
+
+// Reset function
+Sandcastle.reset = function () {
+  viewer.dataSources.removeAll();
+};
