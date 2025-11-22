@@ -12,10 +12,20 @@ const viewer = new Cesium.Viewer("cesiumContainer", {
   shouldAnimate: true,
 });
 
-viewer.scene.moon.show = true;
-viewer.scene.sun.show = true;
-viewer.scene.globe.enableLighting = true;
-// viewer.scene.globe.baseColor = Cesium.Color.BLACK;
+// Camera centered on Earth
+// viewer.camera.setView({
+//   destination: Cesium.Cartesian3.fromDegrees(0.0, 0.0, 15000000.0),
+//   orientation: {
+//     heading: Cesium.Math.toRadians(0.0),
+//     pitch: Cesium.Math.toRadians(-90.0),
+//     roll: 0.0,
+//   },
+// });
+
+// Enable lighting and atmosphere
+// viewer.scene.globe.enableLighting = true;
+// viewer.scene.moon.show = true;
+// viewer.scene.sun.show = true;
 
 // Add Satellites button
 Sandcastle.addDefaultToolbarButton("Satellites", function () {
