@@ -1,0 +1,119 @@
+[
+  {
+    "id": "document",
+    "name": "Simple CZML Example",
+    "version": "1.0",
+    "clock": {
+      "interval": "2025-01-01T00:00:00Z/2025-01-02T00:00:00Z",
+      "currentTime": "2025-01-01T12:00:00Z",
+      "multiplier": 60
+    }
+  },
+  {
+    "id": "satellite1",
+    "name": "Sample Satellite 1",
+    "availability": "2025-01-01T00:00:00Z/2025-01-02T00:00:00Z",
+    "position": {
+      "cartographicDegrees": [
+        "2025-01-01T00:00:00Z", -75.0, 40.0, 400000,
+        "2025-01-01T06:00:00Z", -60.0, 35.0, 400000,
+        "2025-01-01T12:00:00Z", -45.0, 30.0, 400000,
+        "2025-01-01T18:00:00Z", -30.0, 25.0, 400000,
+        "2025-01-02T00:00:00Z", -15.0, 20.0, 400000
+      ]
+    },
+    "point": {
+      "pixelSize": 8,
+      "color": {
+        "rgba": [255, 0, 0, 255]
+      },
+      "outlineColor": {
+        "rgba": [255, 255, 255, 255]
+      },
+      "outlineWidth": 2
+    },
+    "label": {
+      "text": "Satellite 1",
+      "font": "11pt Lucida Console",
+      "horizontalOrigin": "LEFT",
+      "verticalOrigin": "TOP",
+      "pixelOffset": [12, 0],
+      "fillColor": {
+        "rgba": [255, 255, 255, 255]
+      },
+      "outlineColor": {
+        "rgba": [0, 0, 0, 255]
+      },
+      "outlineWidth": 2
+    }
+  },
+  {
+    "id": "satellite2",
+    "name": "Sample Satellite 2",
+    "availability": "2025-01-01T00:00:00Z/2025-01-02T00:00:00Z",
+    "position": {
+      "cartographicDegrees": [
+        "2025-01-01T00:00:00Z", 75.0, -40.0, 350000,
+        "2025-01-01T06:00:00Z", 60.0, -35.0, 350000,
+        "2025-01-01T12:00:00Z", 45.0, -30.0, 350000,
+        "2025-01-01T18:00:00Z", 30.0, -25.0, 350000,
+        "2025-01-02T00:00:00Z", 15.0, -20.0, 350000
+      ]
+    },
+    "point": {
+      "pixelSize": 8,
+      "color": {
+        "rgba": [0, 255, 0, 255]
+      },
+      "outlineColor": {
+        "rgba": [255, 255, 255, 255]
+      },
+      "outlineWidth": 2
+    },
+    "label": {
+      "text": "Satellite 2",
+      "font": "11pt Lucida Console",
+      "horizontalOrigin": "LEFT",
+      "verticalOrigin": "TOP",
+      "pixelOffset": [12, 0],
+      "fillColor": {
+        "rgba": [255, 255, 255, 255]
+      },
+      "outlineColor": {
+        "rgba": [0, 0, 0, 255]
+      },
+      "outlineWidth": 2
+    }
+  },
+  {
+    "id": "station1",
+    "name": "Ground Station",
+    "position": {
+      "cartographicDegrees": [0, 0, 0]
+    },
+    "point": {
+      "pixelSize": 10,
+      "color": {
+        "rgba": [0, 0, 255, 255]
+      },
+      "outlineColor": {
+        "rgba": [255, 255, 255, 255]
+      },
+      "outlineWidth": 2
+    },
+    "label": {
+      "text": "Ground Station",
+      "font": "11pt Lucida Console",
+      "horizontalOrigin": "LEFT",
+      "verticalOrigin": "TOP",
+      "pixelOffset": [12, 0],
+      "fillColor": {
+        "rgba": [255, 255, 255, 255]
+      },
+      "outlineColor": {
+        "rgba": [0, 0, 0, 255]
+      },
+      "outlineWidth": 2
+    }
+  }
+]

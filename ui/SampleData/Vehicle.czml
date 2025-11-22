@@ -1,0 +1,62 @@
+[
+  {
+    "id": "document",
+    "name": "Vehicle CZML Example",
+    "version": "1.0",
+    "clock": {
+      "interval": "2025-01-01T00:00:00Z/2025-01-01T02:00:00Z",
+      "currentTime": "2025-01-01T00:00:00Z",
+      "multiplier": 60
+    }
+  },
+  {
+    "id": "vehicle",
+    "name": "Sample Vehicle",
+    "availability": "2025-01-01T00:00:00Z/2025-01-01T02:00:00Z",
+    "position": {
+      "cartographicDegrees": [
+        "2025-01-01T00:00:00Z", -116.52, 35.02, 0,
+        "2025-01-01T00:30:00Z", -116.45, 35.05, 0,
+        "2025-01-01T01:00:00Z", -116.38, 35.08, 0,
+        "2025-01-01T01:30:00Z", -116.31, 35.11, 0,
+        "2025-01-01T02:00:00Z", -116.24, 35.14, 0
+      ]
+    },
+    "point": {
+      "pixelSize": 10,
+      "color": {
+        "rgba": [255, 165, 0, 255]
+      },
+      "outlineColor": {
+        "rgba": [255, 255, 255, 255]
+      },
+      "outlineWidth": 2
+    },
+    "label": {
+      "text": "Vehicle",
+      "font": "11pt Lucida Console",
+      "horizontalOrigin": "LEFT",
+      "verticalOrigin": "TOP",
+      "pixelOffset": [12, 0],
+      "fillColor": {
+        "rgba": [255, 255, 255, 255]
+      },
+      "outlineColor": {
+        "rgba": [0, 0, 0, 255]
+      },
+      "outlineWidth": 2
+    },
+    "path": {
+      "material": {
+        "solidColor": {
+          "color": {
+            "rgba": [255, 165, 0, 128]
+          }
+        }
+      },
+      "width": 2,
+      "leadTime": 0,
+      "trailTime": 60
+    }
+  }
+]
