@@ -1,0 +1,3096 @@
+[
+  {
+    "alert_level": "RED",
+    "tca_time": "2025-11-23T01:55:55.242353",
+    "distance_km": 9.233309,
+    "relative_velocity_km_s": 5.938,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 4575.096,
+        "y": -41.0198,
+        "z": 5016.2976
+      },
+      "velocity": {
+        "vx": 2.264717,
+        "vy": 7.042137,
+        "vz": -2.006086
+      }
+    },
+    "sat2": {
+      "name": "FREGAT DEB",
+      "catalog": 45641,
+      "position": {
+        "x": 4575.5444,
+        "y": -50.204,
+        "z": 5015.459
+      },
+      "velocity": {
+        "vx": -2.07662,
+        "vy": 7.056493,
+        "vz": 2.045122
+      }
+    }
+  },
+  {
+    "alert_level": "YELLOW",
+    "tca_time": "2025-11-25T06:07:10.928491",
+    "distance_km": 11.592527,
+    "relative_velocity_km_s": 14.756,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -4250.779,
+        "y": -5297.6291,
+        "z": 334.6389
+      },
+      "velocity": {
+        "vx": 3.899972,
+        "vy": -2.740733,
+        "vz": 5.993581
+      }
+    },
+    "sat2": {
+      "name": "FLOCK 4Q 33",
+      "catalog": 58308,
+      "position": {
+        "x": -4260.8339,
+        "y": -5303.1866,
+        "z": 333.0896
+      },
+      "velocity": {
+        "vx": -1.009106,
+        "vy": 0.31962,
+        "vz": -7.581227
+      }
+    }
+  },
+  {
+    "alert_level": "YELLOW",
+    "tca_time": "2025-11-23T01:59:01.365162",
+    "distance_km": 14.018123,
+    "relative_velocity_km_s": 8.7775,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 4893.201,
+        "y": 1260.9856,
+        "z": 4535.3491
+      },
+      "velocity": {
+        "vx": 1.140867,
+        "vy": 6.897319,
+        "vz": -3.143081
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-5190",
+      "catalog": 54092,
+      "position": {
+        "x": 4884.9782,
+        "y": 1256.067,
+        "z": 4525.1168
+      },
+      "velocity": {
+        "vx": -4.484304,
+        "vy": 5.226229,
+        "vz": 3.384503
+      }
+    }
+  },
+  {
+    "alert_level": "YELLOW",
+    "tca_time": "2025-11-24T06:05:55.076003",
+    "distance_km": 15.428933,
+    "relative_velocity_km_s": 14.7564,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 4079.3656,
+        "y": 5433.499,
+        "z": 130.6534
+      },
+      "velocity": {
+        "vx": -3.729102,
+        "vy": 2.953647,
+        "vz": -6.008126
+      }
+    },
+    "sat2": {
+      "name": "ARCSAT-1",
+      "catalog": 52161,
+      "position": {
+        "x": 4079.2908,
+        "y": 5447.8363,
+        "z": 136.3531
+      },
+      "velocity": {
+        "vx": 0.681071,
+        "vy": -0.708701,
+        "vz": 7.589227
+      }
+    }
+  },
+  {
+    "alert_level": "YELLOW",
+    "tca_time": "2025-11-23T15:19:58.823869",
+    "distance_km": 15.861946,
+    "relative_velocity_km_s": 14.7212,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -4483.9085,
+        "y": -4931.5561,
+        "z": -1359.2847
+      },
+      "velocity": {
+        "vx": 2.793963,
+        "vy": -4.133145,
+        "vz": 5.806518
+      }
+    },
+    "sat2": {
+      "name": "IPERDRONE.0",
+      "catalog": 60520,
+      "position": {
+        "x": -4484.5,
+        "y": -4946.8074,
+        "z": -1363.603
+      },
+      "velocity": {
+        "vx": 0.272079,
+        "vy": 1.795508,
+        "vz": -7.429964
+      }
+    }
+  },
+  {
+    "alert_level": "YELLOW",
+    "tca_time": "2025-11-23T02:01:50.988743",
+    "distance_km": 16.617875,
+    "relative_velocity_km_s": 10.1653,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 4996.3221,
+        "y": 2400.8215,
+        "z": 3922.5336
+      },
+      "velocity": {
+        "vx": 0.07122,
+        "vy": 6.50125,
+        "vz": -4.060503
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-1799",
+      "catalog": 46699,
+      "position": {
+        "x": 5004.3271,
+        "y": 2412.3866,
+        "z": 3931.3837
+      },
+      "velocity": {
+        "vx": -5.148814,
+        "vy": 3.777569,
+        "vz": 4.225997
+      }
+    }
+  },
+  {
+    "alert_level": "YELLOW",
+    "tca_time": "2025-11-25T09:55:50.514092",
+    "distance_km": 18.886595,
+    "relative_velocity_km_s": 12.0629,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 5006.3814,
+        "y": 4498.2627,
+        "z": 931.3132
+      },
+      "velocity": {
+        "vx": -2.593926,
+        "vy": 4.123268,
+        "vz": -5.917251
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-1585",
+      "catalog": 46117,
+      "position": {
+        "x": 5025.1454,
+        "y": 4496.134,
+        "z": 931.0253
+      },
+      "velocity": {
+        "vx": -3.722886,
+        "vy": 2.901098,
+        "vz": 6.030397
+      }
+    }
+  },
+  {
+    "alert_level": "YELLOW",
+    "tca_time": "2025-11-24T02:13:22.048162",
+    "distance_km": 19.090721,
+    "relative_velocity_km_s": 14.7547,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -4086.9937,
+        "y": -5430.0431,
+        "z": -260.6633
+      },
+      "velocity": {
+        "vx": 3.66452,
+        "vy": -3.037104,
+        "vz": 5.998255
+      }
+    },
+    "sat2": {
+      "name": "ARCSAT-1",
+      "catalog": 52161,
+      "position": {
+        "x": -4101.6697,
+        "y": -5420.608,
+        "z": -252.9142
+      },
+      "velocity": {
+        "vx": -0.607988,
+        "vy": 0.80594,
+        "vz": -7.591354
+      }
+    }
+  },
+  {
+    "alert_level": "YELLOW",
+    "tca_time": "2025-11-23T23:15:53.495587",
+    "distance_km": 19.962141,
+    "relative_velocity_km_s": 13.8574,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -1654.9277,
+        "y": -6049.7648,
+        "z": 2618.8289
+      },
+      "velocity": {
+        "vx": 5.547866,
+        "vy": 0.756608,
+        "vz": 5.228027
+      }
+    },
+    "sat2": {
+      "name": "COSMOS 1408 DEB",
+      "catalog": 50032,
+      "position": {
+        "x": -1668.3177,
+        "y": -6061.5005,
+        "z": 2627.8549
+      },
+      "velocity": {
+        "vx": 0.258502,
+        "vy": -3.100925,
+        "vz": -6.985443
+      }
+    }
+  },
+  {
+    "alert_level": "YELLOW",
+    "tca_time": "2025-11-24T19:17:39.728291",
+    "distance_km": 21.394575,
+    "relative_velocity_km_s": 14.7617,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -3853.0285,
+        "y": -5570.1373,
+        "z": 607.4539
+      },
+      "velocity": {
+        "vx": 4.232523,
+        "vy": -2.267106,
+        "vz": 5.966224
+      }
+    },
+    "sat2": {
+      "name": "PLATERO",
+      "catalog": 58262,
+      "position": {
+        "x": -3865.4324,
+        "y": -5554.4075,
+        "z": 614.9669
+      },
+      "velocity": {
+        "vx": -1.21356,
+        "vy": -0.008146,
+        "vz": -7.566867
+      }
+    }
+  },
+  {
+    "alert_level": "YELLOW",
+    "tca_time": "2025-11-23T15:03:36.985052",
+    "distance_km": 23.720281,
+    "relative_velocity_km_s": 10.5609,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -4234.503,
+        "y": 1065.6451,
+        "z": -5217.6046
+      },
+      "velocity": {
+        "vx": -3.244584,
+        "vy": -6.81394,
+        "vz": 1.238838
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-4315",
+      "catalog": 53077,
+      "position": {
+        "x": -4236.8465,
+        "y": 1074.0525,
+        "z": -5239.6608
+      },
+      "velocity": {
+        "vx": -5.170779,
+        "vy": 2.944891,
+        "vz": 4.786628
+      }
+    }
+  },
+  {
+    "alert_level": "YELLOW",
+    "tca_time": "2025-11-24T09:59:31.271426",
+    "distance_km": 24.248418,
+    "relative_velocity_km_s": 14.7587,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -3854.3416,
+        "y": -5592.5587,
+        "z": 337.2395
+      },
+      "velocity": {
+        "vx": 4.090371,
+        "vy": -2.447994,
+        "vz": 5.993393
+      }
+    },
+    "sat2": {
+      "name": "PICO-02I029",
+      "catalog": 60568,
+      "position": {
+        "x": -3854.5286,
+        "y": -5616.47,
+        "z": 333.2143
+      },
+      "velocity": {
+        "vx": -1.058043,
+        "vy": 0.268385,
+        "vz": -7.568889
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-22T23:05:09.898690",
+    "distance_km": 25.100254,
+    "relative_velocity_km_s": 14.7486,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 4052.3406,
+        "y": 5338.7501,
+        "z": 1114.6413
+      },
+      "velocity": {
+        "vx": -3.244188,
+        "vy": 3.699457,
+        "vz": -5.876465
+      }
+    },
+    "sat2": {
+      "name": "PICO-02F026",
+      "catalog": 60567,
+      "position": {
+        "x": 4069.9095,
+        "y": 5356.6404,
+        "z": 1115.778
+      },
+      "velocity": {
+        "vx": 0.072076,
+        "vy": -1.620984,
+        "vz": 7.473256
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-24T02:19:06.108678",
+    "distance_km": 25.23935,
+    "relative_velocity_km_s": 0.2161,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -2554.3132,
+        "y": -6046.1693,
+        "z": 1771.0443
+      },
+      "velocity": {
+        "vx": 5.133208,
+        "vy": -0.499108,
+        "vz": 5.663206
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-35432",
+      "catalog": 66021,
+      "position": {
+        "x": -2560.4253,
+        "y": -6067.9523,
+        "z": 1782.2322
+      },
+      "velocity": {
+        "vx": 4.986947,
+        "vy": -0.39584,
+        "vz": 5.784155
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T06:10:26.740908",
+    "distance_km": 25.363847,
+    "relative_velocity_km_s": 14.7628,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -3390.2666,
+        "y": -5701.5503,
+        "z": 1490.5958
+      },
+      "velocity": {
+        "vx": 4.853568,
+        "vy": -1.368032,
+        "vz": 5.765128
+      }
+    },
+    "sat2": {
+      "name": "CZ-4 DEB",
+      "catalog": 26441,
+      "position": {
+        "x": -3394.9147,
+        "y": -5677.0606,
+        "z": 1495.2837
+      },
+      "velocity": {
+        "vx": -1.809879,
+        "vy": -0.866053,
+        "vz": -7.398701
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-24T06:03:17.651443",
+    "distance_km": 25.434233,
+    "relative_velocity_km_s": 13.3168,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 4599.2039,
+        "y": 4885.5386,
+        "z": 1069.4422
+      },
+      "velocity": {
+        "vx": -2.857776,
+        "vy": 3.98967,
+        "vz": -5.887287
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-34668",
+      "catalog": 64814,
+      "position": {
+        "x": 4608.2945,
+        "y": 4908.746,
+        "z": 1074.5097
+      },
+      "velocity": {
+        "vx": -2.708109,
+        "vy": 0.982862,
+        "vz": 7.084739
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-23T23:05:32.371777",
+    "distance_km": 25.456221,
+    "relative_velocity_km_s": 14.7346,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -4437.3496,
+        "y": -5060.1317,
+        "z": -986.3793
+      },
+      "velocity": {
+        "vx": 3.043431,
+        "vy": -3.811056,
+        "vz": 5.901514
+      }
+    },
+    "sat2": {
+      "name": "IPERDRONE.0",
+      "catalog": 60520,
+      "position": {
+        "x": -4461.9084,
+        "y": -5056.2209,
+        "z": -980.9394
+      },
+      "velocity": {
+        "vx": -0.026371,
+        "vy": 1.473061,
+        "vz": -7.506016
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-24T14:08:55.211592",
+    "distance_km": 25.529092,
+    "relative_velocity_km_s": 0.5234,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -1744.8479,
+        "y": 4245.9755,
+        "z": -5019.3265
+      },
+      "velocity": {
+        "vx": -5.670567,
+        "vy": -4.718991,
+        "vz": -2.025818
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-1042",
+      "catalog": 44747,
+      "position": {
+        "x": -1762.9683,
+        "y": 4241.3575,
+        "z": -5036.7063
+      },
+      "velocity": {
+        "vx": -5.320725,
+        "vy": -4.967579,
+        "vz": -2.325368
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-24T07:22:30.301155",
+    "distance_km": 26.079684,
+    "relative_velocity_km_s": 9.0392,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 4789.0315,
+        "y": 80.5439,
+        "z": 4812.2718
+      },
+      "velocity": {
+        "vx": 2.46683,
+        "vy": 6.788379,
+        "vz": -2.565221
+      }
+    },
+    "sat2": {
+      "name": "SHIYAN 19 (SY-19)",
+      "catalog": 55861,
+      "position": {
+        "x": 4779.0776,
+        "y": 71.1764,
+        "z": 4834.4826
+      },
+      "velocity": {
+        "vx": 5.383366,
+        "vy": -1.325038,
+        "vz": -5.280563
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-23T19:12:45.448064",
+    "distance_km": 26.102654,
+    "relative_velocity_km_s": 14.7394,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 4448.3121,
+        "y": 5004.2965,
+        "z": 1154.8076
+      },
+      "velocity": {
+        "vx": -2.929346,
+        "vy": 3.968216,
+        "vz": -5.866636
+      }
+    },
+    "sat2": {
+      "name": "IPERDRONE.0",
+      "catalog": 60520,
+      "position": {
+        "x": 4473.9927,
+        "y": 5006.5931,
+        "z": 1150.7356
+      },
+      "velocity": {
+        "vx": -0.113729,
+        "vy": -1.626156,
+        "vz": 7.475947
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T02:14:21.301300",
+    "distance_km": 26.358645,
+    "relative_velocity_km_s": 14.7515,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 4295.4636,
+        "y": 5264.245,
+        "z": -144.653
+      },
+      "velocity": {
+        "vx": -3.760828,
+        "vy": 2.913066,
+        "vz": -6.007787
+      }
+    },
+    "sat2": {
+      "name": "FLOCK 4Q 33",
+      "catalog": 58308,
+      "position": {
+        "x": 4306.0356,
+        "y": 5288.0389,
+        "z": -140.5467
+      },
+      "velocity": {
+        "vx": 0.85487,
+        "vy": -0.509227,
+        "vz": 7.578593
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T05:59:45.495115",
+    "distance_km": 28.160105,
+    "relative_velocity_km_s": 14.6645,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -5392.1923,
+        "y": -3474.5502,
+        "z": -2265.5813
+      },
+      "velocity": {
+        "vx": 1.117975,
+        "vy": -5.271771,
+        "vz": 5.435096
+      }
+    },
+    "sat2": {
+      "name": "SKYKRAFT-1",
+      "catalog": 55041,
+      "position": {
+        "x": -5377.1489,
+        "y": -3494.8741,
+        "z": -2277.9759
+      },
+      "velocity": {
+        "vx": 1.55308,
+        "vy": 2.247774,
+        "vz": -7.147221
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-24T02:02:20.421645",
+    "distance_km": 28.641067,
+    "relative_velocity_km_s": 14.3741,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -5211.199,
+        "y": -2163.1846,
+        "z": -3802.3003
+      },
+      "velocity": {
+        "vx": -0.422347,
+        "vy": -6.375643,
+        "vz": 4.20786
+      }
+    },
+    "sat2": {
+      "name": "NEMO-HD",
+      "catalog": 46277,
+      "position": {
+        "x": -5234.2557,
+        "y": -2170.6949,
+        "z": -3817.5415
+      },
+      "velocity": {
+        "vx": 3.447402,
+        "vy": 2.682375,
+        "vz": -6.260794
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-23T19:12:46.906222",
+    "distance_km": 29.075715,
+    "relative_velocity_km_s": 13.3064,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 4444.0347,
+        "y": 5010.076,
+        "z": 1146.2516
+      },
+      "velocity": {
+        "vx": -2.937595,
+        "vy": 3.958926,
+        "vz": -5.868777
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-34633",
+      "catalog": 64804,
+      "position": {
+        "x": 4472.4931,
+        "y": 5015.508,
+        "z": 1148.7026
+      },
+      "velocity": {
+        "vx": -2.788356,
+        "vy": 0.858504,
+        "vz": 7.070514
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-23T15:12:59.787879",
+    "distance_km": 29.283785,
+    "relative_velocity_km_s": 14.4615,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -5122.2371,
+        "y": -2724.6961,
+        "z": -3554.1804
+      },
+      "velocity": {
+        "vx": 0.197044,
+        "vy": -6.203217,
+        "vz": 4.474539
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-35269",
+      "catalog": 65593,
+      "position": {
+        "x": -5147.0308,
+        "y": -2734.4519,
+        "z": -3566.3309
+      },
+      "velocity": {
+        "vx": 2.917961,
+        "vy": 2.891249,
+        "vz": -6.435232
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T15:30:05.682676",
+    "distance_km": 29.397885,
+    "relative_velocity_km_s": 0.2272,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -2884.7527,
+        "y": -5726.894,
+        "z": 2255.4566
+      },
+      "velocity": {
+        "vx": 5.365358,
+        "vy": -0.549071,
+        "vz": 5.439484
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-35340",
+      "catalog": 66022,
+      "position": {
+        "x": -2904.4164,
+        "y": -5748.1902,
+        "z": 2250.5528
+      },
+      "velocity": {
+        "vx": 5.216523,
+        "vy": -0.442989,
+        "vz": 5.574393
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-23T03:04:27.076953",
+    "distance_km": 29.563204,
+    "relative_velocity_km_s": 11.9626,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -2390.1244,
+        "y": -6214.7287,
+        "z": 1374.931
+      },
+      "velocity": {
+        "vx": 4.962674,
+        "vy": -0.614891,
+        "vz": 5.801627
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-1928",
+      "catalog": 46758,
+      "position": {
+        "x": -2402.8868,
+        "y": -6240.5478,
+        "z": 1381.6003
+      },
+      "velocity": {
+        "vx": 3.934419,
+        "vy": -2.830382,
+        "vz": -5.908995
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-23T03:02:52.006120",
+    "distance_km": 29.63776,
+    "relative_velocity_km_s": 14.7572,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -2847.327,
+        "y": -6120.7583,
+        "z": 816.5195
+      },
+      "velocity": {
+        "vx": 4.64629,
+        "vy": -1.360056,
+        "vz": 5.934388
+      }
+    },
+    "sat2": {
+      "name": "JILIN-01 GAOFEN 3D 30",
+      "catalog": 52447,
+      "position": {
+        "x": -2823.1899,
+        "y": -6131.9819,
+        "z": 803.4877
+      },
+      "velocity": {
+        "vx": -1.303795,
+        "vy": -0.404219,
+        "vz": -7.536285
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-23T07:05:24.777974",
+    "distance_km": 29.820189,
+    "relative_velocity_km_s": 9.9909,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -401.544,
+        "y": 5471.4991,
+        "z": -4019.0826
+      },
+      "velocity": {
+        "vx": -5.66261,
+        "vy": -3.308084,
+        "vz": -3.946163
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-1654",
+      "catalog": 46326,
+      "position": {
+        "x": -391.1776,
+        "y": 5493.9207,
+        "z": -4035.7876
+      },
+      "velocity": {
+        "vx": -5.89099,
+        "vy": 2.597407,
+        "vz": 4.109388
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-23T09:54:05.230959",
+    "distance_km": 29.848791,
+    "relative_velocity_km_s": 14.7228,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 4495.6338,
+        "y": 4836.886,
+        "z": 1596.9945
+      },
+      "velocity": {
+        "vx": -2.634737,
+        "vy": 4.352522,
+        "vz": -5.732741
+      }
+    },
+    "sat2": {
+      "name": "IPERDRONE.0",
+      "catalog": 60520,
+      "position": {
+        "x": 4489.8829,
+        "y": 4863.1564,
+        "z": 1609.9462
+      },
+      "velocity": {
+        "vx": -0.476369,
+        "vy": -2.009566,
+        "vz": 7.367835
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-24T01:57:42.787010",
+    "distance_km": 29.930867,
+    "relative_velocity_km_s": 8.842,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -4844.0494,
+        "y": -317.168,
+        "z": -4767.3865
+      },
+      "velocity": {
+        "vx": -2.200616,
+        "vy": -6.814359,
+        "vz": 2.687984
+      }
+    },
+    "sat2": {
+      "name": "R5-S2",
+      "catalog": 60207,
+      "position": {
+        "x": -4862.43,
+        "y": -317.426,
+        "z": -4791.0073
+      },
+      "velocity": {
+        "vx": -5.351612,
+        "vy": 1.005906,
+        "vz": 5.351704
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T10:00:43.840856",
+    "distance_km": 29.978659,
+    "relative_velocity_km_s": 12.0753,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 3987.8259,
+        "y": 5441.8522,
+        "z": -823.444
+      },
+      "velocity": {
+        "vx": -4.287229,
+        "vy": 2.251942,
+        "vz": -5.937667
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-35433",
+      "catalog": 65870,
+      "position": {
+        "x": 4003.1401,
+        "y": 5467.14,
+        "z": -828.4162
+      },
+      "velocity": {
+        "vx": -3.290868,
+        "vy": 3.317388,
+        "vz": 6.04915
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-23T15:23:03.131820",
+    "distance_km": 30.124313,
+    "relative_velocity_km_s": 12.1206,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -3876.4183,
+        "y": -5582.029,
+        "z": -267.5329
+      },
+      "velocity": {
+        "vx": 3.774615,
+        "vy": -2.899897,
+        "vz": 5.997873
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-1742",
+      "catalog": 46376,
+      "position": {
+        "x": -3903.4686,
+        "y": -5568.7857,
+        "z": -266.9231
+      },
+      "velocity": {
+        "vx": 3.905057,
+        "vy": -2.454157,
+        "vz": -6.113871
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-23T11:01:49.677194",
+    "distance_km": 31.080207,
+    "relative_velocity_km_s": 7.623,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 1702.8462,
+        "y": -4471.8242,
+        "z": 4819.8171
+      },
+      "velocity": {
+        "vx": 5.393986,
+        "vy": 4.809777,
+        "vz": 2.546214
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-34626",
+      "catalog": 65082,
+      "position": {
+        "x": 1724.6636,
+        "y": -4483.8123,
+        "z": 4838.4254
+      },
+      "velocity": {
+        "vx": 7.100108,
+        "vy": -0.324741,
+        "vz": -2.823658
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T09:05:26.477834",
+    "distance_km": 31.39407,
+    "relative_velocity_km_s": 14.6535,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -5437.4273,
+        "y": -3379.1929,
+        "z": -2301.4406
+      },
+      "velocity": {
+        "vx": 1.013616,
+        "vy": -5.312371,
+        "vz": 5.41592
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-35248",
+      "catalog": 65598,
+      "position": {
+        "x": -5468.1435,
+        "y": -3384.1498,
+        "z": -2305.6272
+      },
+      "velocity": {
+        "vx": 1.600159,
+        "vy": 2.252335,
+        "vz": -7.120283
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T03:03:12.371087",
+    "distance_km": 32.204011,
+    "relative_velocity_km_s": 14.7481,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -3732.2791,
+        "y": -5597.8065,
+        "z": 984.1499
+      },
+      "velocity": {
+        "vx": 4.479498,
+        "vy": -1.938635,
+        "vz": 5.90191
+      }
+    },
+    "sat2": {
+      "name": "PSLV DEB",
+      "catalog": 27153,
+      "position": {
+        "x": -3749.3169,
+        "y": -5624.624,
+        "z": 989.4065
+      },
+      "velocity": {
+        "vx": -1.493887,
+        "vy": -0.344426,
+        "vz": -7.4878
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-23T10:04:35.861045",
+    "distance_km": 32.55542,
+    "relative_velocity_km_s": 14.6925,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 1880.766,
+        "y": 6183.6017,
+        "z": -2108.5644
+      },
+      "velocity": {
+        "vx": -5.304748,
+        "vy": -0.261157,
+        "vz": -5.518537
+      }
+    },
+    "sat2": {
+      "name": "JILIN-01 GAOFEN 3D 4",
+      "catalog": 52389,
+      "position": {
+        "x": 1852.0398,
+        "y": 6186.4487,
+        "z": -2093.5126
+      },
+      "velocity": {
+        "vx": 1.675581,
+        "vy": 1.934017,
+        "vz": 7.222203
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T19:05:58.360818",
+    "distance_km": 32.591123,
+    "relative_velocity_km_s": 10.9789,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 5571.3822,
+        "y": 2061.269,
+        "z": 3291.6354
+      },
+      "velocity": {
+        "vx": 0.572958,
+        "vy": 6.011391,
+        "vz": -4.721741
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-35723",
+      "catalog": 66211,
+      "position": {
+        "x": 5591.3457,
+        "y": 2083.6468,
+        "z": 3304.3975
+      },
+      "velocity": {
+        "vx": -4.365446,
+        "vy": 3.966359,
+        "vz": 4.868211
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T13:53:21.765268",
+    "distance_km": 32.784804,
+    "relative_velocity_km_s": 9.9733,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -3979.1272,
+        "y": -5432.6706,
+        "z": 941.9114
+      },
+      "velocity": {
+        "vx": 4.36443,
+        "vy": -2.161346,
+        "vz": 5.910682
+      }
+    },
+    "sat2": {
+      "name": "HORYU 4",
+      "catalog": 41340,
+      "position": {
+        "x": -3951.2388,
+        "y": -5448.9415,
+        "z": 947.5983
+      },
+      "velocity": {
+        "vx": 5.049766,
+        "vy": -4.333559,
+        "vz": -3.798982
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T19:06:55.246002",
+    "distance_km": 32.786974,
+    "relative_velocity_km_s": 11.2202,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 5592.4888,
+        "y": 2398.7523,
+        "z": 3016.4313
+      },
+      "velocity": {
+        "vx": 0.168851,
+        "vy": 5.849947,
+        "vz": -4.950732
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-35024",
+      "catalog": 65410,
+      "position": {
+        "x": 5610.0041,
+        "y": 2423.2008,
+        "z": 3029.4877
+      },
+      "velocity": {
+        "vx": -4.353835,
+        "vy": 3.69387,
+        "vz": 5.088672
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T03:04:08.365273",
+    "distance_km": 32.813194,
+    "relative_velocity_km_s": 13.5442,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -3474.1938,
+        "y": -5695.1487,
+        "z": 1312.4386
+      },
+      "velocity": {
+        "vx": 4.735742,
+        "vy": -1.537085,
+        "vz": 5.820016
+      }
+    },
+    "sat2": {
+      "name": "COSMOS 2251 DEB",
+      "catalog": 34400,
+      "position": {
+        "x": -3454.5123,
+        "y": -5721.1758,
+        "z": 1308.9842
+      },
+      "velocity": {
+        "vx": 1.111588,
+        "vy": -2.322473,
+        "vz": -7.206605
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T10:02:00.995691",
+    "distance_km": 33.119153,
+    "relative_velocity_km_s": 12.0097,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 3642.3854,
+        "y": 5594.8064,
+        "z": -1277.8615
+      },
+      "velocity": {
+        "vx": -4.661589,
+        "vy": 1.710453,
+        "vz": -5.834277
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-1978",
+      "catalog": 47576,
+      "position": {
+        "x": 3651.4622,
+        "y": 5563.0429,
+        "z": -1275.5006
+      },
+      "velocity": {
+        "vx": -3.298408,
+        "vy": 3.526617,
+        "vz": 5.958816
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-22T23:02:40.012908",
+    "distance_km": 34.12784,
+    "relative_velocity_km_s": 14.6906,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 4478.5052,
+        "y": 4710.7696,
+        "z": 1975.2978
+      },
+      "velocity": {
+        "vx": -2.428772,
+        "vy": 4.660035,
+        "vz": -5.580268
+      }
+    },
+    "sat2": {
+      "name": "FLOCK 4Q 22",
+      "catalog": 58306,
+      "position": {
+        "x": 4512.3349,
+        "y": 4713.2998,
+        "z": 1971.5751
+      },
+      "velocity": {
+        "vx": -0.781804,
+        "vy": -2.303595,
+        "vz": 7.249711
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-24T14:12:44.338419",
+    "distance_km": 35.060142,
+    "relative_velocity_km_s": 1.3275,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -2972.2824,
+        "y": 3036.6404,
+        "z": -5312.399
+      },
+      "velocity": {
+        "vx": -4.984312,
+        "vy": -5.778536,
+        "vz": -0.518367
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-34490",
+      "catalog": 64478,
+      "position": {
+        "x": -2971.9101,
+        "y": 3066.4761,
+        "z": -5330.8085
+      },
+      "velocity": {
+        "vx": -4.089897,
+        "vy": -6.302497,
+        "vz": -1.347628
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-23T07:03:53.030524",
+    "distance_km": 35.157072,
+    "relative_velocity_km_s": 10.5665,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 119.2001,
+        "y": 5745.3367,
+        "z": -3636.218
+      },
+      "velocity": {
+        "vx": -5.679023,
+        "vy": -2.655934,
+        "vz": -4.392516
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-1655",
+      "catalog": 47623,
+      "position": {
+        "x": 126.3411,
+        "y": 5774.4741,
+        "z": -3654.5492
+      },
+      "velocity": {
+        "vx": -5.366542,
+        "vy": 2.987233,
+        "vz": 4.535382
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T15:19:29.223278",
+    "distance_km": 35.340068,
+    "relative_velocity_km_s": 14.7068,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -5303.9114,
+        "y": -3996.1296,
+        "z": -1473.6492
+      },
+      "velocity": {
+        "vx": 1.909072,
+        "vy": -4.653523,
+        "vz": 5.770926
+      }
+    },
+    "sat2": {
+      "name": "ASTROCAST-01",
+      "catalog": 43798,
+      "position": {
+        "x": -5334.6316,
+        "y": -4013.0788,
+        "z": -1477.8816
+      },
+      "velocity": {
+        "vx": 0.693787,
+        "vy": 1.793013,
+        "vz": -7.391734
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-24T23:10:06.032498",
+    "distance_km": 35.397118,
+    "relative_velocity_km_s": 14.7517,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 3863.6918,
+        "y": 5547.8125,
+        "z": -697.9959
+      },
+      "velocity": {
+        "vx": -4.269349,
+        "vy": 2.232418,
+        "vz": -5.958088
+      }
+    },
+    "sat2": {
+      "name": "PLATERO",
+      "catalog": 58262,
+      "position": {
+        "x": 3843.7874,
+        "y": 5573.0704,
+        "z": -683.2036
+      },
+      "velocity": {
+        "vx": 1.242258,
+        "vy": 0.0557,
+        "vz": 7.551096
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T02:04:05.187908",
+    "distance_km": 35.808615,
+    "relative_velocity_km_s": 10.9736,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 5434.3049,
+        "y": 2389.6417,
+        "z": 3298.7892
+      },
+      "velocity": {
+        "vx": 0.214107,
+        "vy": 6.039877,
+        "vz": -4.715326
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-35750",
+      "catalog": 66209,
+      "position": {
+        "x": 5448.9817,
+        "y": 2418.4477,
+        "z": 3314.1861
+      },
+      "velocity": {
+        "vx": -4.606236,
+        "vy": 3.694996,
+        "vz": 4.859895
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-24T02:11:45.378786",
+    "distance_km": 35.813944,
+    "relative_velocity_km_s": 14.7389,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -4416.3381,
+        "y": -5104.8732,
+        "z": -837.814
+      },
+      "velocity": {
+        "vx": 3.142623,
+        "vy": -3.683692,
+        "vz": 5.930645
+      }
+    },
+    "sat2": {
+      "name": "IPERDRONE.0",
+      "catalog": 60520,
+      "position": {
+        "x": -4448.3967,
+        "y": -5095.6559,
+        "z": -824.7783
+      },
+      "velocity": {
+        "vx": -0.146331,
+        "vy": 1.339883,
+        "vz": -7.529775
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T05:56:45.309268",
+    "distance_km": 36.620809,
+    "relative_velocity_km_s": 14.5223,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -5481.786,
+        "y": -2459.965,
+        "z": -3191.6447
+      },
+      "velocity": {
+        "vx": -0.126714,
+        "vy": -5.951086,
+        "vz": 4.808658
+      }
+    },
+    "sat2": {
+      "name": "BRO-8",
+      "catalog": 55011,
+      "position": {
+        "x": -5516.2338,
+        "y": -2465.0608,
+        "z": -3202.979
+      },
+      "velocity": {
+        "vx": 2.770247,
+        "vy": 2.44887,
+        "vz": -6.678158
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-23T10:07:43.630069",
+    "distance_km": 38.752295,
+    "relative_velocity_km_s": 9.9001,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 850.1954,
+        "y": 5997.124,
+        "z": -3089.9191
+      },
+      "velocity": {
+        "vx": -5.631263,
+        "vy": -1.717372,
+        "vz": -4.895297
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-30159",
+      "catalog": 57440,
+      "position": {
+        "x": 858.6806,
+        "y": 6031.1772,
+        "z": -3106.3546
+      },
+      "velocity": {
+        "vx": -5.924751,
+        "vy": 2.842964,
+        "vz": 3.886969
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-24T13:05:12.533473",
+    "distance_km": 38.983161,
+    "relative_velocity_km_s": 8.782,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -3942.8571,
+        "y": -5532.8148,
+        "z": 298.1059
+      },
+      "velocity": {
+        "vx": 4.030256,
+        "vy": -2.539367,
+        "vz": 5.996033
+      }
+    },
+    "sat2": {
+      "name": "ARIANE 5 R/B",
+      "catalog": 39080,
+      "position": {
+        "x": -3974.6245,
+        "y": -5536.3831,
+        "z": 275.7947
+      },
+      "velocity": {
+        "vx": 8.891725,
+        "vy": -4.419447,
+        "vz": -1.071863
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T19:14:00.211615",
+    "distance_km": 39.503566,
+    "relative_velocity_km_s": 13.3494,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 5031.1551,
+        "y": 4520.2661,
+        "z": 651.4724
+      },
+      "velocity": {
+        "vx": -2.759871,
+        "vy": 3.942509,
+        "vz": -5.964844
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-34662",
+      "catalog": 64799,
+      "position": {
+        "x": 5069.6985,
+        "y": 4511.7084,
+        "z": 650.1668
+      },
+      "velocity": {
+        "vx": -2.262272,
+        "vy": 1.502334,
+        "vz": 7.150182
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T02:07:18.401381",
+    "distance_km": 39.734466,
+    "relative_velocity_km_s": 14.6717,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 5346.8025,
+        "y": 3490.8862,
+        "z": 2316.6899
+      },
+      "velocity": {
+        "vx": -1.116347,
+        "vy": 5.314177,
+        "vz": -5.410295
+      }
+    },
+    "sat2": {
+      "name": "SKYKRAFT-1",
+      "catalog": 55041,
+      "position": {
+        "x": 5374.8306,
+        "y": 3466.8511,
+        "z": 2302.0077
+      },
+      "velocity": {
+        "vx": -1.607853,
+        "vy": -2.275979,
+        "vz": 7.13592
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-23T03:12:48.627685",
+    "distance_km": 39.92203,
+    "relative_velocity_km_s": 10.1617,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 340.1853,
+        "y": -5540.491,
+        "z": 3917.4253
+      },
+      "velocity": {
+        "vx": 5.633437,
+        "vy": 3.231583,
+        "vz": 4.064792
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-34659",
+      "catalog": 64913,
+      "position": {
+        "x": 370.8698,
+        "y": -5561.6648,
+        "z": 3931.7046
+      },
+      "velocity": {
+        "vx": 5.798303,
+        "vy": -2.620699,
+        "vz": -4.240858
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-24T19:02:31.685089",
+    "distance_km": 40.000582,
+    "relative_velocity_km_s": 9.606,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -5216.6772,
+        "y": -1185.0166,
+        "z": -4204.0952
+      },
+      "velocity": {
+        "vx": -1.490873,
+        "vy": -6.532449,
+        "vz": 3.691449
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-1043",
+      "catalog": 44748,
+      "position": {
+        "x": -5249.206,
+        "y": -1175.5039,
+        "z": -4225.3422
+      },
+      "velocity": {
+        "vx": 4.238634,
+        "vy": -5.027422,
+        "vz": -3.8705
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-24T23:08:04.858052",
+    "distance_km": 40.14096,
+    "relative_velocity_km_s": 14.7524,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 4343.407,
+        "y": 5226.4326,
+        "z": 28.2442
+      },
+      "velocity": {
+        "vx": -3.63605,
+        "vy": 3.063804,
+        "vz": -6.009913
+      }
+    },
+    "sat2": {
+      "name": "FLOCK 4Q 33",
+      "catalog": 58308,
+      "position": {
+        "x": 4337.103,
+        "y": 5264.0148,
+        "z": 40.859
+      },
+      "velocity": {
+        "vx": 0.723425,
+        "vy": -0.669854,
+        "vz": 7.580058
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T06:09:03.843528",
+    "distance_km": 40.300719,
+    "relative_velocity_km_s": 9.9644,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -3777.2499,
+        "y": -5563.4536,
+        "z": 1006.8623
+      },
+      "velocity": {
+        "vx": 4.476098,
+        "vy": -1.961293,
+        "vz": 5.897031
+      }
+    },
+    "sat2": {
+      "name": "HORYU 4",
+      "catalog": 41340,
+      "position": {
+        "x": -3809.3116,
+        "y": -5540.2561,
+        "z": 999.242
+      },
+      "velocity": {
+        "vx": 5.147319,
+        "vy": -4.232161,
+        "vz": -3.78195
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-23T02:11:44.521746",
+    "distance_km": 40.448149,
+    "relative_velocity_km_s": 12.0655,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 3957.147,
+        "y": 5459.4998,
+        "z": 840.0956
+      },
+      "velocity": {
+        "vx": -3.44139,
+        "vy": 3.41738,
+        "vz": -5.934451
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-1545",
+      "catalog": 46156,
+      "position": {
+        "x": 3993.4306,
+        "y": 5477.2081,
+        "z": 842.5375
+      },
+      "velocity": {
+        "vx": -4.184939,
+        "vy": 2.116344,
+        "vz": 6.037656
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-24T22:13:59.666297",
+    "distance_km": 41.014321,
+    "relative_velocity_km_s": 11.4371,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -5370.4764,
+        "y": -3208.6234,
+        "z": -2673.5548
+      },
+      "velocity": {
+        "vx": 0.746131,
+        "vy": -5.57062,
+        "vz": 5.194323
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-34937",
+      "catalog": 66192,
+      "position": {
+        "x": -5399.3043,
+        "y": -3231.7687,
+        "z": -2691.3151
+      },
+      "velocity": {
+        "vx": 4.503681,
+        "vy": -3.102934,
+        "vz": -5.322276
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T19:18:22.448963",
+    "distance_km": 41.545323,
+    "relative_velocity_km_s": 9.9809,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 4099.4707,
+        "y": 5342.8687,
+        "z": -918.3297
+      },
+      "velocity": {
+        "vx": -4.293704,
+        "vy": 2.285669,
+        "vz": -5.919925
+      }
+    },
+    "sat2": {
+      "name": "HORYU 4",
+      "catalog": 41340,
+      "position": {
+        "x": 4067.099,
+        "y": 5368.136,
+        "z": -924.6265
+      },
+      "velocity": {
+        "vx": -4.972102,
+        "vy": 4.412897,
+        "vz": 3.808039
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T11:12:53.973209",
+    "distance_km": 42.30457,
+    "relative_velocity_km_s": 6.1608,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 4408.8669,
+        "y": -1082.6015,
+        "z": 5048.5139
+      },
+      "velocity": {
+        "vx": 3.751228,
+        "vy": 6.40748,
+        "vz": -1.900745
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-1019",
+      "catalog": 44724,
+      "position": {
+        "x": 4393.9905,
+        "y": -1121.2281,
+        "z": 5039.7757
+      },
+      "velocity": {
+        "vx": -0.718911,
+        "vy": 7.298325,
+        "vz": 2.244116
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T16:10:56.006999",
+    "distance_km": 42.794385,
+    "relative_velocity_km_s": 14.7445,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 4440.9737,
+        "y": 5133.8266,
+        "z": -328.1211
+      },
+      "velocity": {
+        "vx": -3.784931,
+        "vy": 2.900169,
+        "vz": -5.998618
+      }
+    },
+    "sat2": {
+      "name": "DEIMOS",
+      "catalog": 60526,
+      "position": {
+        "x": 4459.9383,
+        "y": 5172.1892,
+        "z": -328.0011
+      },
+      "velocity": {
+        "vx": 0.979397,
+        "vy": -0.370891,
+        "vz": 7.566071
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T14:07:51.226302",
+    "distance_km": 43.022257,
+    "relative_velocity_km_s": 7.3336,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 998.8021,
+        "y": -4619.9029,
+        "z": 4877.1214
+      },
+      "velocity": {
+        "vx": 6.155262,
+        "vy": 3.878716,
+        "vz": 2.40352
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-2032",
+      "catalog": 47649,
+      "position": {
+        "x": 982.9925,
+        "y": -4649.0722,
+        "z": 4904.5097
+      },
+      "velocity": {
+        "vx": 7.03279,
+        "vy": -1.338694,
+        "vz": -2.674919
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-22T21:54:16.367039",
+    "distance_km": 43.035295,
+    "relative_velocity_km_s": 9.8852,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -2557.3341,
+        "y": 3699.3665,
+        "z": -5103.8808
+      },
+      "velocity": {
+        "vx": -4.791013,
+        "vy": -5.704251,
+        "vz": -1.73882
+      }
+    },
+    "sat2": {
+      "name": "SL-3 DEB",
+      "catalog": 14209,
+      "position": {
+        "x": -2566.1742,
+        "y": 3741.3753,
+        "z": -5100.8557
+      },
+      "velocity": {
+        "vx": 4.348906,
+        "vy": -3.798582,
+        "vz": -4.986564
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T07:11:46.667048",
+    "distance_km": 43.647096,
+    "relative_velocity_km_s": 13.2918,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -1829.8887,
+        "y": 4077.1882,
+        "z": -5127.8519
+      },
+      "velocity": {
+        "vx": -5.825366,
+        "vy": -4.677734,
+        "vz": -1.645298
+      }
+    },
+    "sat2": {
+      "name": "NUSAT-28 (ALICE LEE)",
+      "catalog": 52747,
+      "position": {
+        "x": -1839.9384,
+        "y": 4059.2537,
+        "z": -5089.3496
+      },
+      "velocity": {
+        "vx": -0.949127,
+        "vy": 5.778095,
+        "vz": 4.955429
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-24T18:00:54.827693",
+    "distance_km": 43.766194,
+    "relative_velocity_km_s": 13.5828,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 1582.0982,
+        "y": -4343.7099,
+        "z": 4975.0954
+      },
+      "velocity": {
+        "vx": 5.778483,
+        "vy": 4.55782,
+        "vz": 2.132494
+      }
+    },
+    "sat2": {
+      "name": "GHOST-5",
+      "catalog": 59130,
+      "position": {
+        "x": 1604.7422,
+        "y": -4373.9812,
+        "z": 4997.1494
+      },
+      "velocity": {
+        "vx": 0.51013,
+        "vy": -5.654532,
+        "vz": -5.109295
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-24T15:15:02.964573",
+    "distance_km": 43.863245,
+    "relative_velocity_km_s": 14.6053,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 5316.3879,
+        "y": 3041.893,
+        "z": 2934.9129
+      },
+      "velocity": {
+        "vx": -0.528561,
+        "vy": 5.775194,
+        "vz": -5.012792
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-35162",
+      "catalog": 65613,
+      "position": {
+        "x": 5322.5448,
+        "y": 3076.851,
+        "z": 2960.6814
+      },
+      "velocity": {
+        "vx": -2.285572,
+        "vy": -2.617824,
+        "vz": 6.810293
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-23T15:07:29.819738",
+    "distance_km": 44.069495,
+    "relative_velocity_km_s": 13.8471,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -4837.3044,
+        "y": -539.0923,
+        "z": -4754.4348
+      },
+      "velocity": {
+        "vx": -1.903672,
+        "vy": -6.891748,
+        "vz": 2.717047
+      }
+    },
+    "sat2": {
+      "name": "JILIN-01 GAOFEN 3E",
+      "catalog": 46457,
+      "position": {
+        "x": -4859.5711,
+        "y": -505.0432,
+        "z": -4737.4946
+      },
+      "velocity": {
+        "vx": 5.070507,
+        "vy": 1.881789,
+        "vz": -5.414894
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T16:17:15.514057",
+    "distance_km": 44.373496,
+    "relative_velocity_km_s": 0.2301,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 2647.6795,
+        "y": 5738.4499,
+        "z": -2505.9835
+      },
+      "velocity": {
+        "vx": -5.520592,
+        "vy": 0.238369,
+        "vz": -5.302914
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-35196",
+      "catalog": 66007,
+      "position": {
+        "x": 2640.3631,
+        "y": 5759.976,
+        "z": -2544.0899
+      },
+      "velocity": {
+        "vx": -5.390291,
+        "vy": 0.085101,
+        "vz": -5.414529
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-23T19:19:17.360725",
+    "distance_km": 45.018527,
+    "relative_velocity_km_s": 12.018,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 2909.7717,
+        "y": 6028.4149,
+        "z": -1181.3585
+      },
+      "velocity": {
+        "vx": -4.793488,
+        "vy": 1.173305,
+        "vz": -5.860019
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-1894",
+      "catalog": 46744,
+      "position": {
+        "x": 2954.612,
+        "y": 6026.2998,
+        "z": -1184.7556
+      },
+      "velocity": {
+        "vx": -3.729993,
+        "vy": 2.996197,
+        "vz": 5.971216
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-22T21:52:25.448266",
+    "distance_km": 45.278731,
+    "relative_velocity_km_s": 13.7495,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -2007.4519,
+        "y": 4301.7274,
+        "z": -4871.7924
+      },
+      "velocity": {
+        "vx": -5.111241,
+        "vy": -5.142951,
+        "vz": -2.440645
+      }
+    },
+    "sat2": {
+      "name": "SENTRY",
+      "catalog": 59140,
+      "position": {
+        "x": -2029.5491,
+        "y": 4283.6539,
+        "z": -4836.6466
+      },
+      "velocity": {
+        "vx": -1.006987,
+        "vy": 5.475798,
+        "vz": 5.269468
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T02:12:09.785450",
+    "distance_km": 45.549289,
+    "relative_velocity_km_s": 14.7418,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 4741.0953,
+        "y": 4824.7316,
+        "z": 644.1553
+      },
+      "velocity": {
+        "vx": -3.003554,
+        "vy": 3.758529,
+        "vz": -5.965805
+      }
+    },
+    "sat2": {
+      "name": "FLOCK 4BE 33",
+      "catalog": 60502,
+      "position": {
+        "x": 4757.5645,
+        "y": 4866.0971,
+        "z": 653.7677
+      },
+      "velocity": {
+        "vx": 0.195821,
+        "vy": -1.210909,
+        "vz": 7.539312
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-23T15:21:34.013314",
+    "distance_km": 45.733828,
+    "relative_velocity_km_s": 14.7683,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -4192.7291,
+        "y": -5295.9316,
+        "z": -799.8037
+      },
+      "velocity": {
+        "vx": 3.318118,
+        "vy": -3.515299,
+        "vz": 5.93732
+      }
+    },
+    "sat2": {
+      "name": "INTUITION-1",
+      "catalog": 58565,
+      "position": {
+        "x": -4148.2816,
+        "y": -5288.5364,
+        "z": -807.6338
+      },
+      "velocity": {
+        "vx": -0.22827,
+        "vy": 1.320887,
+        "vz": -7.558454
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-24T02:09:36.818877",
+    "distance_km": 45.953132,
+    "relative_velocity_km_s": 14.6926,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -4772.7453,
+        "y": -4579.5515,
+        "z": -1588.7995
+      },
+      "velocity": {
+        "vx": 2.392384,
+        "vy": -4.474381,
+        "vz": 5.731963
+      }
+    },
+    "sat2": {
+      "name": "FLOCK 4BE 15",
+      "catalog": 60491,
+      "position": {
+        "x": -4790.5006,
+        "y": -4619.2001,
+        "z": -1603.7802
+      },
+      "velocity": {
+        "vx": 0.571606,
+        "vy": 1.953293,
+        "vz": -7.353953
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-23T14:08:46.530389",
+    "distance_km": 46.599245,
+    "relative_velocity_km_s": 6.6888,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 2022.4999,
+        "y": -4150.4541,
+        "z": 4980.3802
+      },
+      "velocity": {
+        "vx": 5.286584,
+        "vy": 5.127077,
+        "vz": 2.116569
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-1350",
+      "catalog": 45535,
+      "position": {
+        "x": 2044.3786,
+        "y": -4175.5197,
+        "z": 5013.0073
+      },
+      "velocity": {
+        "vx": 7.216068,
+        "vy": 0.612608,
+        "vz": -2.426233
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-23T11:14:48.172531",
+    "distance_km": 46.887019,
+    "relative_velocity_km_s": 13.8134,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 4769.5863,
+        "y": 423.3961,
+        "z": 4813.5947
+      },
+      "velocity": {
+        "vx": 1.972184,
+        "vy": 6.949508,
+        "vz": -2.561957
+      }
+    },
+    "sat2": {
+      "name": "JILIN-01 GAOFEN 3E",
+      "catalog": 46457,
+      "position": {
+        "x": 4767.8002,
+        "y": 455.6287,
+        "z": 4847.5986
+      },
+      "velocity": {
+        "vx": -5.204436,
+        "vy": -1.878259,
+        "vz": 5.272392
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-22T23:06:26.348275",
+    "distance_km": 47.115706,
+    "relative_velocity_km_s": 12.0953,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 3789.5745,
+        "y": 5601.3857,
+        "z": 661.7935
+      },
+      "velocity": {
+        "vx": -3.625778,
+        "vy": 3.167107,
+        "vz": -5.963154
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-35232",
+      "catalog": 65518,
+      "position": {
+        "x": 3836.4517,
+        "y": 5605.491,
+        "z": 664.1517
+      },
+      "velocity": {
+        "vx": -4.13945,
+        "vy": 2.10324,
+        "vz": 6.074328
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-23T19:06:45.530288",
+    "distance_km": 47.225389,
+    "relative_velocity_km_s": 14.5569,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 5112.3041,
+        "y": 3208.1765,
+        "z": 3114.477
+      },
+      "velocity": {
+        "vx": -0.709576,
+        "vy": 5.874991,
+        "vz": -4.872534
+      }
+    },
+    "sat2": {
+      "name": "BRO-5",
+      "catalog": 51061,
+      "position": {
+        "x": 5158.0595,
+        "y": 3197.3373,
+        "z": 3110.0965
+      },
+      "velocity": {
+        "vx": -2.364109,
+        "vy": -2.754718,
+        "vz": 6.733273
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T10:01:13.037242",
+    "distance_km": 47.426082,
+    "relative_velocity_km_s": 9.9703,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 3860.5167,
+        "y": 5504.6408,
+        "z": -996.3233
+      },
+      "velocity": {
+        "vx": -4.432879,
+        "vy": 2.048795,
+        "vz": -5.903799
+      }
+    },
+    "sat2": {
+      "name": "HORYU 4",
+      "catalog": 41340,
+      "position": {
+        "x": 3899.9398,
+        "y": 5479.7476,
+        "z": -987.6413
+      },
+      "velocity": {
+        "vx": -5.089368,
+        "vy": 4.295066,
+        "vz": 3.787938
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T16:10:26.650227",
+    "distance_km": 47.597331,
+    "relative_velocity_km_s": 14.7235,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 4549.6332,
+        "y": 5045.8894,
+        "z": -151.8733
+      },
+      "velocity": {
+        "vx": -3.617084,
+        "vy": 3.090216,
+        "vz": -6.007604
+      }
+    },
+    "sat2": {
+      "name": "GRAVITY-1 R/B",
+      "catalog": 66205,
+      "position": {
+        "x": 4570.1229,
+        "y": 5088.7414,
+        "z": -148.8107
+      },
+      "velocity": {
+        "vx": 0.934959,
+        "vy": -0.500175,
+        "vz": 7.526436
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-23T07:09:29.304086",
+    "distance_km": 47.721274,
+    "relative_velocity_km_s": 10.7807,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -1753.717,
+        "y": 4467.0956,
+        "z": -4820.3802
+      },
+      "velocity": {
+        "vx": -5.327259,
+        "vy": -4.854791,
+        "vz": -2.566613
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-34003",
+      "catalog": 63882,
+      "position": {
+        "x": -1715.8347,
+        "y": 4486.7933,
+        "z": -4841.6933
+      },
+      "velocity": {
+        "vx": -5.159124,
+        "vy": 3.103231,
+        "vz": 4.704245
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-25T13:05:08.418487",
+    "distance_km": 47.852101,
+    "relative_velocity_km_s": 14.7471,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 4383.6845,
+        "y": 5182.8745,
+        "z": -327.7995
+      },
+      "velocity": {
+        "vx": -3.816704,
+        "vy": 2.858163,
+        "vz": -5.998631
+      }
+    },
+    "sat2": {
+      "name": "ICEYE-X34",
+      "catalog": 58294,
+      "position": {
+        "x": 4376.5088,
+        "y": 5228.9081,
+        "z": -316.8799
+      },
+      "velocity": {
+        "vx": 0.975832,
+        "vy": -0.369385,
+        "vz": 7.569364
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-23T23:14:53.314815",
+    "distance_km": 48.1683,
+    "relative_velocity_km_s": 10.6394,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -1984.7422,
+        "y": -6081.3563,
+        "z": 2298.4071
+      },
+      "velocity": {
+        "vx": 5.408731,
+        "vy": 0.29287,
+        "vz": 5.416537
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-35443",
+      "catalog": 66339,
+      "position": {
+        "x": -1971.2398,
+        "y": -6038.1774,
+        "z": 2281.8708
+      },
+      "velocity": {
+        "vx": 5.169545,
+        "vy": -3.414379,
+        "vz": -4.553174
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-24T19:13:21.506643",
+    "distance_km": 48.233841,
+    "relative_velocity_km_s": 13.3253,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -4768.7386,
+        "y": -4758.9341,
+        "z": -937.0509
+      },
+      "velocity": {
+        "vx": 2.810058,
+        "vy": -3.971298,
+        "vz": 5.911725
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-34629",
+      "catalog": 64790,
+      "position": {
+        "x": -4747.328,
+        "y": -4800.9849,
+        "z": -947.0421
+      },
+      "velocity": {
+        "vx": 2.575055,
+        "vy": -1.150099,
+        "vz": -7.109349
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-24T09:55:50.571759",
+    "distance_km": 48.629473,
+    "relative_velocity_km_s": 8.4026,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -4629.316,
+        "y": -4885.8977,
+        "z": -982.2761
+      },
+      "velocity": {
+        "vx": 2.896483,
+        "vy": -3.922638,
+        "vz": 5.902382
+      }
+    },
+    "sat2": {
+      "name": "ARIANE 2 DEB",
+      "catalog": 27650,
+      "position": {
+        "x": -4622.5419,
+        "y": -4930.3882,
+        "z": -963.8498
+      },
+      "velocity": {
+        "vx": 8.127731,
+        "vy": -5.827096,
+        "vz": -0.391363
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-24T03:06:08.903373",
+    "distance_km": 49.277599,
+    "relative_velocity_km_s": 0.2207,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 2365.7554,
+        "y": 6053.6169,
+        "z": -1993.3145
+      },
+      "velocity": {
+        "vx": -5.249961,
+        "vy": 0.223972,
+        "vz": -5.572846
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-35276",
+      "catalog": 66009,
+      "position": {
+        "x": 2357.2621,
+        "y": 6077.4429,
+        "z": -2035.6047
+      },
+      "velocity": {
+        "vx": -5.112211,
+        "vy": 0.08709,
+        "vz": -5.67767
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-24T23:01:40.250199",
+    "distance_km": 49.322688,
+    "relative_velocity_km_s": 14.7069,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": 5296.0629,
+        "y": 3600.551,
+        "z": 2265.0431
+      },
+      "velocity": {
+        "vx": -1.239738,
+        "vy": 5.258091,
+        "vz": -5.438122
+      }
+    },
+    "sat2": {
+      "name": "VESTA-1",
+      "catalog": 43781,
+      "position": {
+        "x": 5275.4934,
+        "y": 3562.2398,
+        "z": 2241.7648
+      },
+      "velocity": {
+        "vx": -1.512805,
+        "vy": -2.293383,
+        "vz": 7.179116
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-24T11:19:19.380863",
+    "distance_km": 49.357873,
+    "relative_velocity_km_s": 14.3533,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -5262.9485,
+        "y": -1830.8537,
+        "z": -3904.1187
+      },
+      "velocity": {
+        "vx": -0.799032,
+        "vy": -6.417306,
+        "vz": 4.087871
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-33945",
+      "catalog": 64154,
+      "position": {
+        "x": -5307.6116,
+        "y": -1809.8448,
+        "z": -3903.9355
+      },
+      "velocity": {
+        "vx": 3.674259,
+        "vy": 2.55322,
+        "vz": -6.185226
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-23T15:04:26.054222",
+    "distance_km": 49.696985,
+    "relative_velocity_km_s": 13.1585,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -4387.1985,
+        "y": 729.8421,
+        "z": -5148.8979
+      },
+      "velocity": {
+        "vx": -2.977533,
+        "vy": -6.869554,
+        "vz": 1.560854
+      }
+    },
+    "sat2": {
+      "name": "ZHUHAI-1 OHS-02",
+      "catalog": 43441,
+      "position": {
+        "x": -4421.8512,
+        "y": 739.6666,
+        "z": -5183.1391
+      },
+      "velocity": {
+        "vx": 5.822262,
+        "vy": 0.478324,
+        "vz": -4.898224
+      }
+    }
+  },
+  {
+    "alert_level": "GREEN",
+    "tca_time": "2025-11-24T10:05:04.955201",
+    "distance_km": 49.965026,
+    "relative_velocity_km_s": 10.6498,
+    "sat1": {
+      "name": "ISS (ZARYA)",
+      "catalog": 25544,
+      "position": {
+        "x": -2252.1629,
+        "y": -5999.6678,
+        "z": 2266.5913
+      },
+      "velocity": {
+        "vx": 5.399336,
+        "vy": 0.03693,
+        "vz": 5.433583
+      }
+    },
+    "sat2": {
+      "name": "STARLINK-35322",
+      "catalog": 66332,
+      "position": {
+        "x": -2213.8177,
+        "y": -5970.7498,
+        "z": 2252.8109
+      },
+      "velocity": {
+        "vx": 5.024913,
+        "vy": -3.593871,
+        "vz": -4.571134
+      }
+    }
+  }
+]

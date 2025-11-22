@@ -1,0 +1,30 @@
+[
+  {
+    "id": "document",
+    "name": "Satellite Time Series",
+    "version": "1.0"
+  },
+  {
+    "id": "VANGUARD 1",
+    "name": "VANGUARD 1",
+    "availability": "2025-11-22T20:26:32.002051Z/2025-11-22T21:26:32.002051Z",
+    "position": {
+      "epoch": "2025-11-22T20:26:32.002051Z",
+      "cartesian": [
+        0.0,
+        1255797.7135292043,
+        7411969.416009679,
+        -2501168.032067846,
+        3600.0,
+        1536132.8361988177,
+        -8150041.182576876,
+        4304497.31862607
+      ],
+      "interpolationAlgorithm": "LAGRANGE",
+      "interpolationDegree": 1
+    },
+    "point": {
+      "pixelSize": 10
+    }
+  }
+]
