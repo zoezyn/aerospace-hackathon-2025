@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { TopBar } from "@/components/TopBar";
 import { SatelliteInfo } from "@/components/SatelliteInfo";
 import { ConjunctionList } from "@/components/ConjunctionList";
+import { ConjunctionTable } from "@/components/ConjunctionTable";
 import { FilterControls } from "@/components/FilterControls";
 import { TimelineControl } from "@/components/TimelineControl";
 import { CesiumViewer, type CesiumViewerRef } from "@/components/CesiumViewer";
@@ -13,7 +14,7 @@ const Index = () => {
   const cesiumViewerRef = useRef<CesiumViewerRef>(null);
   const [selectedConjunction, setSelectedConjunction] = useState<number | null>(null);
   const [targetSatellite, setTargetSatellite] = useState<string>('ISS (ZARYA)');
-  const [timeWindow, setTimeWindow] = useState<string>('72');
+  const [timeWindow, setTimeWindow] = useState<string>('24');
   const [autoRefresh, setAutoRefresh] = useState<boolean>(false);
   const [lastUpdate, setLastUpdate] = useState<string>(new Date().toLocaleString());
   
@@ -21,7 +22,7 @@ const Index = () => {
     showHigh: true,
     showMedium: true,
     showLow: true,
-    minDistance: 0,
+    maxDistance: 100, // Default to maximum value (100 km)
   });
   
   const { conjunctions = [], loading, error } = useConjunctions();
@@ -35,7 +36,7 @@ const Index = () => {
     if (conj.alert_level === 'RED' && !filters.showHigh) return false;
     if (conj.alert_level === 'YELLOW' && !filters.showMedium) return false;
     if (conj.alert_level === 'GREEN' && !filters.showLow) return false;
-    if (conj.distance_km < filters.minDistance) return false;
+    if (filters.maxDistance > 0 && conj.distance_km > filters.maxDistance) return false;
     return true;
   });
   
@@ -80,7 +81,7 @@ const Index = () => {
     ],
   };
   
-  const handleConjunctionSelect = (index: number) => {
+  const handleSelectConjunction = (index: number) => {
     setSelectedConjunction(index);
     
     // Focus on the selected satellite in the Cesium viewer
@@ -168,19 +169,28 @@ const Index = () => {
                 </div>
               )}
               
-              {!loading && !error && (
-                <ConjunctionList
-                  conjunctions={filteredConjunctions}
-                  onSelectConjunction={handleConjunctionSelect}
-                  selectedIndex={selectedConjunction}
-                />
-              )}
+              <div className="flex-1 overflow-y-auto">
+                <div className="flex justify-between items-center mb-4 px-4">
+                  <h2 className="text-lg font-semibold">Conjunctions</h2>
+                  <ConjunctionTable 
+                    conjunctions={filteredConjunctions}
+                    onSelectConjunction={handleSelectConjunction}
+                  />
+                </div>
+                {!loading && !error && (
+                  <ConjunctionList 
+                    conjunctions={filteredConjunctions}
+                    onSelectConjunction={handleSelectConjunction}
+                    selectedIndex={selectedConjunction}
+                  />
+                )}
+              </div>
             </div>
           </div>
         </div>
 
         {/* Timeline at the bottom */}
-        <div className="h-32 px-4 pb-2">
+        <div className="mt-4 px-4">
           <TimelineControl
             events={filteredConjunctions.map((c, index) => ({
               id: `${c.sat1.catalog}-${c.sat2.catalog}-${new Date(c.tca_time).getTime()}-${index}`,

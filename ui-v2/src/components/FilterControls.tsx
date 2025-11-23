@@ -9,7 +9,7 @@ interface FilterControlsProps {
     showHigh: boolean;
     showMedium: boolean;
     showLow: boolean;
-    minDistance: number;
+    maxDistance: number; // 0-50 km
   };
   onFilterChange: (filters: any) => void;
 }
@@ -63,7 +63,7 @@ export const FilterControls = ({ filters, onFilterChange }: FilterControlsProps)
                 id="low"
                 checked={filters.showLow}
                 onCheckedChange={(checked) =>
-                  onFilterChange({ ...filters, showLow: checked })
+                  onFilterChange({ ...filters, showLow: !!checked })
                 }
               />
               <label
@@ -77,24 +77,30 @@ export const FilterControls = ({ filters, onFilterChange }: FilterControlsProps)
           </div>
         </div>
 
-        <div className="space-y-2">
-          <Label className="text-sm text-muted-foreground">
-            Min Distance Threshold
-          </Label>
-          <div className="flex items-center gap-3">
+        <div className="space-y-4">
+          <div>
+            <div className="flex justify-between mb-1">
+              <Label htmlFor="distance" className="text-sm text-muted-foreground">
+                Maximum Distance
+              </Label>
+              <span className="text-sm text-muted-foreground">
+                {filters.maxDistance} km
+              </span>
+            </div>
             <Slider
-              value={[filters.minDistance]}
-              onValueChange={(value) =>
-                onFilterChange({ ...filters, minDistance: value[0] })
-              }
+              id="distance"
               min={0}
-              max={10}
-              step={0.1}
-              className="flex-1"
+              max={100}
+              step={1}
+              value={[filters.maxDistance]}
+              onValueChange={(value) =>
+                onFilterChange({ ...filters, maxDistance: value[0] })
+              }
             />
-            <span className="telemetry-text text-sm w-16 text-right">
-              {filters.minDistance.toFixed(1)} km
-            </span>
+            <div className="flex justify-between text-xs text-muted-foreground mt-1">
+              <span>0 km</span>
+              <span>100 km</span>
+            </div>
           </div>
         </div>
       </div>

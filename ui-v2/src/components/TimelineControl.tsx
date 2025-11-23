@@ -21,7 +21,7 @@ interface TimelineControlProps {
 export const TimelineControl = ({
   events,
   currentTime,
-  timeWindow = 72, // default to 72 hours
+  timeWindow = 24, // default to 24 hours
   onTimeChange,
   onJumpToEvent,
 }: TimelineControlProps) => {
