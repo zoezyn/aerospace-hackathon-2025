@@ -449,10 +449,3 @@ class CollisionDetector:
         print(f"{'='*70}")
         print(f"Distance - Min: {min(distances):.6f} km, Max: {max(distances):.6f} km, Avg: {np.mean(distances):.6f} km")
         print(f"Velocity - Min: {min(velocities):.4f} km/s, Max: {max(velocities):.4f} km/s, Avg: {np.mean(velocities):.4f} km/s")
-
-        # Distance distribution with alert color indicators
-        print(f"\nDistance distribution:")
-        print(f"  [!!!] 0-2 km:  {sum(1 for d in distances if d < 2)} (critical)")
-        print(f"  [!!!] 2-5 km:  {sum(1 for d in distances if 2 <= d < 5)}")
-        print(f"  [!!]  5-10 km: {sum(1 for d in distances if 5 <= d < 10)}")
-        print(f"  [OK]  10+ km:  {sum(1 for d in distances if d >= 10)}")
