@@ -7,6 +7,7 @@ import { TimelineControl } from "@/components/TimelineControl";
 import { CesiumViewer } from "@/components/CesiumViewer";
 import { useConjunctions } from "@/hooks/useConjunctions";
 import { useSatelliteData } from "@/hooks/useSatelliteData";
+import { CzmlDataSource } from "cesium";
 
 const Index = () => {
   const [selectedConjunction, setSelectedConjunction] = useState<number | null>(null);
@@ -126,7 +127,11 @@ const Index = () => {
         <div className="flex-1 flex overflow-hidden px-4 pb-2">
           {/* Cesium Viewer - takes most of the space */}
           <div className="flex-1 rounded-lg overflow-hidden border">
-            <CesiumViewer onEntityClick={handleEntityClick} />
+            <CesiumViewer 
+              onEntityClick={handleEntityClick} 
+              filteredConjunctions={filteredConjunctions}
+              refreshTrigger={filters.minDistance} // Trigger refresh when minDistance changes
+            />
           </div>
 
           {/* Right Panel - fixed width, scrollable */}
