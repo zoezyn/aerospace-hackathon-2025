@@ -66,7 +66,10 @@ export const CesiumViewer = ({ noradId = "40069", czmlData, onEntityClick }: Ces
         console.log(`Loading CZML from: ${czmlPath}`);
         
         const dataSource = new Cesium.CzmlDataSource();
-        await dataSource.load(czmlPath);
+        await dataSource.load(czmlPath, {
+          // This ensures Cesium uses the full ID from CZML
+          sourceUri: document.baseURI
+        });
         viewer.dataSources.add(dataSource);
 
         // Enable clock animation
@@ -75,7 +78,7 @@ export const CesiumViewer = ({ noradId = "40069", czmlData, onEntityClick }: Ces
         viewer.clock.currentTime = Cesium.JulianDate.fromDate(startTime);
         viewer.clock.stopTime = Cesium.JulianDate.fromDate(new Date(startTime.getTime() + 180 * 60000));
         viewer.clock.clockRange = Cesium.ClockRange.LOOP_STOP;
-        viewer.clock.multiplier = 60; // 60x speed
+        viewer.clock.multiplier = 2; // 60x speed
         viewer.clock.shouldAnimate = true;
 
         setIsLoading(false);

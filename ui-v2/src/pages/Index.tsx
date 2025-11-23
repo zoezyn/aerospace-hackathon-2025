@@ -164,15 +164,19 @@ const Index = () => {
         {/* Timeline at the bottom */}
         <div className="h-32 px-4 pb-2">
           <TimelineControl
-            events={filteredConjunctions.map(c => ({
-              id: c.sat1.catalog.toString(),
+            events={filteredConjunctions.map((c, index) => ({
+              id: `${c.sat1.catalog}-${c.sat2.catalog}-${new Date(c.tca_time).getTime()}-${index}`,
               time: c.tca_time,
               risk: c.alert_level.toLowerCase() as 'high' | 'medium' | 'low'
             }))}
             currentTime={Date.now() / 1000}
             timeWindow={Number(timeWindow)}
             onTimeChange={() => {}}
-            onJumpToEvent={handleJumpToEvent}
+            onJumpToEvent={(eventId) => {
+              // Extract the catalog number from the event ID
+              const catalog = eventId.split('-')[0];
+              handleJumpToEvent(catalog);
+            }}
           />
         </div>
       </div>

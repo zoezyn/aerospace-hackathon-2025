@@ -80,7 +80,7 @@ export const ConjunctionList = ({
         ) : (
           conjunctions.map((conj, index) => (
             <div
-              key={`${conj.sat1.catalog}-${conj.sat2.catalog}-${index}`}
+              key={`${conj.sat1.catalog}-${conj.sat2.catalog}-${conj.tca_time}-${index}`}
               onClick={() => onSelectConjunction(index)}
               className={`p-4 rounded-lg border cursor-pointer transition-colors ${
                 selectedIndex === index 
