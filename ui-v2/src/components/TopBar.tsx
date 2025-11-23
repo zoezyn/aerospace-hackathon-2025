@@ -40,7 +40,7 @@ export const TopBar = ({
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="sentinel-2a">Sentinel-2A</SelectItem>
-              <SelectItem value="iss">ISS</SelectItem>
+              <SelectItem value="ISS (ZARYA)">ISS</SelectItem>
               <SelectItem value="hubble">Hubble Space Telescope</SelectItem>
             </SelectContent>
           </Select>

@@ -3,41 +3,66 @@ import { Badge } from "@/components/ui/badge";
 import { AlertTriangle, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
-interface Conjunction {
-  id: string;
-  debrisId: string;
-  objectType: string;
-  distance: number;
-  time: string;
-  risk: "high" | "medium" | "low";
-  relativeVelocity: number[];
-  lastUpdate: string;
+export interface Position {
+  x: number;
+  y: number;
+  z: number;
+}
+
+export interface Velocity {
+  vx: number;
+  vy: number;
+  vz: number;
+}
+
+export interface Satellite {
+  name: string;
+  catalog: number;
+  position: Position;
+  velocity: Velocity;
+}
+
+export interface Conjunction {
+  alert_level: 'RED' | 'YELLOW' | 'GREEN' | string;
+  tca_time: string;
+  distance_km: number;
+  relative_velocity_km_s: number;
+  sat1: Satellite;
+  sat2: Satellite;
 }
 
 interface ConjunctionListProps {
   conjunctions: Conjunction[];
-  onSelectConjunction: (id: string) => void;
+  onSelectConjunction: (index: number) => void;
+  selectedIndex?: number | null;
 }
 
-export const ConjunctionList = ({ conjunctions, onSelectConjunction }: ConjunctionListProps) => {
-  const [selectedId, setSelectedId] = useState<string | null>(null);
-
-  const getRiskColor = (risk: string) => {
-    switch (risk) {
-      case "high":
-        return "text-risk-high border-risk-high bg-risk-high/10";
-      case "medium":
-        return "text-risk-medium border-risk-medium bg-risk-medium/10";
-      case "low":
-        return "text-risk-low border-risk-low bg-risk-low/10";
+export const ConjunctionList = ({ 
+  conjunctions, 
+  onSelectConjunction,
+  selectedIndex = null 
+}: ConjunctionListProps) => {
+  const getRiskColor = (alertLevel: string) => {
+    switch (alertLevel) {
+      case 'RED':
+        return 'text-risk-high border-risk-high bg-risk-high/10';
+      case 'YELLOW':
+        return 'text-risk-medium border-risk-medium bg-risk-medium/10';
+      case 'GREEN':
       default:
-        return "";
+        return 'text-risk-low border-risk-low bg-risk-low/10';
     }
   };
 
-  const handleSelect = (id: string) => {
-    setSelectedId(id);
-    onSelectConjunction(id);
+  const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleString(undefined, {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
   };
 
   return (
@@ -47,51 +72,65 @@ export const ConjunctionList = ({ conjunctions, onSelectConjunction }: Conjuncti
         <h2 className="text-lg font-semibold">Conjunctions</h2>
       </div>
 
-      <div className="space-y-2 max-h-96 overflow-y-auto">
-        {conjunctions.map((conj) => (
-          <div
-            key={conj.id}
-            onClick={() => handleSelect(conj.id)}
-            className={`p-3 rounded-lg border cursor-pointer smooth-transition hover:bg-muted/50 ${
-              selectedId === conj.id ? "bg-muted border-primary" : "border-border"
-            }`}
-          >
-            <div className="flex items-start justify-between mb-2">
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="font-mono font-semibold">{conj.debrisId}</span>
-                  <Badge
-                    variant="outline"
-                    className={`text-xs ${getRiskColor(conj.risk)}`}
-                  >
-                    {conj.risk}
-                  </Badge>
-                </div>
-                <div className="text-xs text-muted-foreground">{conj.objectType}</div>
-              </div>
-              <ChevronRight className="h-4 w-4 text-muted-foreground" />
-            </div>
-
-            <div className="grid grid-cols-2 gap-2 text-sm">
-              <div>
-                <div className="text-xs text-muted-foreground">Distance</div>
-                <div className="telemetry-text font-semibold">
-                  {conj.distance.toFixed(2)} km
-                </div>
-              </div>
-              <div>
-                <div className="text-xs text-muted-foreground">TCA</div>
-                <div className="text-xs font-mono">
-                  {new Date(conj.time).toLocaleTimeString()}
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-2 text-xs text-muted-foreground">
-              Updated: {conj.lastUpdate}
-            </div>
+      <div className="space-y-3 max-h-[calc(100vh-200px)] overflow-y-auto pr-2">
+        {conjunctions.length === 0 ? (
+          <div className="text-center py-8 text-muted-foreground">
+            No conjunction data available
           </div>
-        ))}
+        ) : (
+          conjunctions.map((conj, index) => (
+            <div
+              key={`${conj.sat1.catalog}-${conj.sat2.catalog}-${index}`}
+              onClick={() => onSelectConjunction(index)}
+              className={`p-4 rounded-lg border cursor-pointer transition-colors ${
+                selectedIndex === index 
+                  ? 'bg-muted/80 border-primary' 
+                  : 'border-border hover:bg-muted/50'
+              }`}
+            >
+              <div className="flex items-start justify-between mb-3">
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="font-semibold line-clamp-1">
+                      {conj.sat2.name}
+                    </span>
+                    <Badge
+                      variant="outline"
+                      className={`text-xs ${getRiskColor(conj.alert_level)}`}
+                    >
+                      {conj.alert_level}
+                    </Badge>
+                  </div>
+                  <div className="text-xs text-muted-foreground">
+                    Catalog IDs: {conj.sat1.catalog} & {conj.sat2.catalog}
+                  </div>
+                </div>
+                <ChevronRight className="h-4 w-4 text-muted-foreground mt-1 flex-shrink-0" />
+              </div>
+
+              <div className="grid grid-cols-2 gap-4 text-sm">
+                <div>
+                  <div className="text-xs text-muted-foreground">TCA (UTC)</div>
+                  <div className="font-medium text-sm">
+                    {formatDate(conj.tca_time)}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-xs text-muted-foreground">Distance</div>
+                  <div className="font-medium text-sm">
+                    {conj.distance_km.toFixed(2)} km
+                  </div>
+                </div>
+                <div>
+                  <div className="text-xs text-muted-foreground">Relative Velocity</div>
+                  <div className="font-medium text-sm">
+                    {conj.relative_velocity_km_s.toFixed(2)} km/s
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        )}
       </div>
     </Card>
   );

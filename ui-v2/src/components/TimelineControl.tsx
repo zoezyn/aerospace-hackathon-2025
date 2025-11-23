@@ -13,6 +13,7 @@ interface TimelineEvent {
 interface TimelineControlProps {
   events: TimelineEvent[];
   currentTime: number;
+  timeWindow: number; // in hours
   onTimeChange: (time: number) => void;
   onJumpToEvent: (eventId: string) => void;
 }
@@ -20,9 +21,11 @@ interface TimelineControlProps {
 export const TimelineControl = ({
   events,
   currentTime,
+  timeWindow = 72, // default to 72 hours
   onTimeChange,
   onJumpToEvent,
 }: TimelineControlProps) => {
+  const maxTime = timeWindow * 3600; // Convert hours to seconds
   const [isPlaying, setIsPlaying] = useState(false);
   const [speed, setSpeed] = useState(1);
 
@@ -105,13 +108,14 @@ export const TimelineControl = ({
             value={[currentTime]}
             onValueChange={(value) => onTimeChange(value[0])}
             min={0}
-            max={259200} // 72 hours in seconds
+            max={maxTime}
             step={60}
             className="w-full"
           />
           <div className="absolute top-0 left-0 right-0 h-2 flex items-center pointer-events-none">
             {events.map((event, index) => {
-              const position = (new Date(event.time).getTime() / 1000 / 259200) * 100;
+              const eventTime = new Date(event.time).getTime() / 1000;
+              const position = (eventTime / maxTime) * 100;
               return (
                 <div
                   key={event.id}
@@ -129,9 +133,10 @@ export const TimelineControl = ({
 
         <div className="flex justify-between text-xs text-muted-foreground">
           <span>T+0h</span>
-          <span>T+24h</span>
-          <span>T+48h</span>
-          <span>T+72h</span>
+          {timeWindow > 24 && <span>T+24h</span>}
+          {timeWindow > 48 && <span>T+48h</span>}
+          {timeWindow > 72 && <span>T+72h</span>}
+          <span>T+{timeWindow}h</span>
         </div>
       </div>
     </Card>

@@ -5,96 +5,86 @@ import { ConjunctionList } from "@/components/ConjunctionList";
 import { FilterControls } from "@/components/FilterControls";
 import { TimelineControl } from "@/components/TimelineControl";
 import { CesiumViewer } from "@/components/CesiumViewer";
+import { useConjunctions } from "@/hooks/useConjunctions";
+import { useSatelliteData } from "@/hooks/useSatelliteData";
 
 const Index = () => {
-  const [targetSatellite, setTargetSatellite] = useState("sentinel-2a");
-  const [timeWindow, setTimeWindow] = useState("72");
-  const [currentTime, setCurrentTime] = useState(Date.now() / 1000);
-  const [selectedConjunction, setSelectedConjunction] = useState<string | null>(null);
+  const [selectedConjunction, setSelectedConjunction] = useState<number | null>(null);
+  const [targetSatellite, setTargetSatellite] = useState<string>('ISS (ZARYA)');
+  const [timeWindow, setTimeWindow] = useState<string>('72');
+  const [autoRefresh, setAutoRefresh] = useState<boolean>(false);
+  const [lastUpdate, setLastUpdate] = useState<string>(new Date().toLocaleString());
+  
   const [filters, setFilters] = useState({
     showHigh: true,
     showMedium: true,
     showLow: true,
     minDistance: 0,
   });
+  
+  const { conjunctions = [], loading, error } = useConjunctions();
+  
+  // Get the currently selected conjunction
+  const currentConjunction = selectedConjunction !== null ? conjunctions[selectedConjunction] : null;
+  
+  // Filter conjunctions based on alert level
+  const filteredConjunctions = conjunctions.filter(conj => {
+    if (!conj) return false;
+    if (conj.alert_level === 'RED' && !filters.showHigh) return false;
+    if (conj.alert_level === 'YELLOW' && !filters.showMedium) return false;
+    if (conj.alert_level === 'GREEN' && !filters.showLow) return false;
+    if (conj.distance_km < filters.minDistance) return false;
+    return true;
+  });
+  
+  // Load ISS satellite data
+  const [issData, issLoading, issError] = useSatelliteData();
 
-  // Sample data
+  // Calculate satellite data based on conjunctions and ISS data
   const satelliteData = {
-    name: "Sentinel-2A",
-    catalogNumber: 40069,
-    inclination: 98.6,
-    perigee: 786,
-    apogee: 786,
-    lastUpdate: "12:00:05 UTC",
+    name: currentConjunction?.sat1?.name || (issData?.name || "ISS (ZARYA)"),
+    catalogNumber: currentConjunction?.sat1?.catalog || (issData?.noradId || 25544),
+    inclination: currentConjunction?.sat1?.position?.y || (issData?.orbitalParameters?.inclination || 51.64),
+    perigee: currentConjunction?.sat1?.perigee || Math.round((1 - (issData?.orbitalParameters?.eccentricity || 0.0004)) * 6778 - 6371) || 408,
+    apogee: currentConjunction?.sat1?.apogee || Math.round((1 + (issData?.orbitalParameters?.eccentricity || 0.0004)) * 6778 - 6371) || 418,
+    lastUpdate: currentConjunction?.tca_time 
+      ? new Date(currentConjunction.tca_time).toLocaleString() 
+      : new Date().toLocaleString(),
     closestApproach: {
-      distance: 0.82,
-      risk: "high" as const,
+      distance: filteredConjunctions[0]?.distance_km || 0,
+      risk: (filteredConjunctions[0]?.alert_level?.toLowerCase() as 'high' | 'medium' | 'low' | undefined) || 'low',
+      time: filteredConjunctions[0]?.tca_time || null,
+      secondarySatellite: filteredConjunctions[0]?.sat2?.name || 'Unknown'
     },
-    conjunctionCount: 7,
+    conjunctionCount: filteredConjunctions.length,
+    crew: {
+      current: issData?.crew?.current || 7,
+      capacity: issData?.crew?.capacity || 7,
+      expedition: issData?.crew?.expedition || 70
+    },
+    physicalParameters: issData?.physicalParameters || {
+      mass: 419725,
+      length: 109,
+      width: 73,
+      height: 20,
+      pressurizedVolume: 916
+    },
+    tle: issData?.tle || [
+      "ISS (ZARYA)",
+      "1 25544U 98067A   25325.83510273  .00014642  00000+0  27370-3 0  9994",
+      "2 25544  51.6324 245.9468 0003994 153.9795 206.1394 15.48969112539610"
+    ],
+  };
+  
+  const handleConjunctionSelect = (index: number) => {
+    setSelectedConjunction(index);
+    // You can add additional logic here to update the Cesium view
   };
 
-  const conjunctions = [
-    {
-      id: "conj-1",
-      debrisId: "12345",
-      objectType: "Rocket Body Fragment",
-      distance: 0.82,
-      time: "2025-11-22T14:35:00Z",
-      risk: "high" as const,
-      relativeVelocity: [-5.1, 1.2, 7.8],
-      lastUpdate: "11:55:00 UTC",
-    },
-    {
-      id: "conj-2",
-      debrisId: "23456",
-      objectType: "Debris Fragment",
-      distance: 2.15,
-      time: "2025-11-22T18:20:00Z",
-      risk: "medium" as const,
-      relativeVelocity: [-3.2, 0.8, 5.1],
-      lastUpdate: "11:58:00 UTC",
-    },
-    {
-      id: "conj-3",
-      debrisId: "34567",
-      objectType: "Satellite Debris",
-      distance: 4.50,
-      time: "2025-11-23T02:45:00Z",
-      risk: "low" as const,
-      relativeVelocity: [-2.1, 0.3, 3.2],
-      lastUpdate: "12:01:00 UTC",
-    },
-    {
-      id: "conj-4",
-      debrisId: "45678",
-      objectType: "Paint Fleck",
-      distance: 1.25,
-      time: "2025-11-23T08:15:00Z",
-      risk: "medium" as const,
-      relativeVelocity: [-4.5, 1.5, 6.8],
-      lastUpdate: "11:52:00 UTC",
-    },
-    {
-      id: "conj-5",
-      debrisId: "56789",
-      objectType: "Solar Panel Fragment",
-      distance: 0.95,
-      time: "2025-11-23T16:30:00Z",
-      risk: "high" as const,
-      relativeVelocity: [-6.2, 2.1, 8.5],
-      lastUpdate: "11:57:00 UTC",
-    },
-  ];
-
-  const timelineEvents = conjunctions.map((c) => ({
-    id: c.id,
-    time: c.time,
-    risk: c.risk,
-  }));
-
   const handleRefresh = () => {
-    console.log("Refreshing data...");
-    // In real implementation, fetch new CZML data
+    setLastUpdate(new Date().toLocaleString());
+    // In a real app, you would trigger a data refetch here
+    // For now, we'll just update the lastUpdate timestamp
   };
 
   const handleEntityClick = (entity: any) => {
@@ -103,7 +93,11 @@ const Index = () => {
 
   const handleJumpToEvent = (eventId: string) => {
     console.log("Jumping to event:", eventId);
-    setSelectedConjunction(eventId);
+    // Find the index of the conjunction with this catalog number
+    const index = conjunctions.findIndex(c => c?.sat1?.catalog?.toString() === eventId);
+    if (index !== -1) {
+      setSelectedConjunction(index);
+    }
   };
 
   // Auto-refresh simulation (every 5 minutes in production)
@@ -113,46 +107,74 @@ const Index = () => {
       console.log("Auto-refresh triggered");
     }, 300000); // 5 minutes
 
-    return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-space-dark">
-      <TopBar
+    <div className="h-screen flex flex-col bg-background overflow-hidden">
+      <TopBar 
         targetSatellite={targetSatellite}
         onTargetChange={setTargetSatellite}
         timeWindow={timeWindow}
         onTimeWindowChange={setTimeWindow}
-        lastUpdate="12:00:05 UTC"
+        lastUpdate={lastUpdate}
         onRefresh={handleRefresh}
-        autoRefresh={true}
+        autoRefresh={autoRefresh}
       />
 
-      <div className="flex-1 flex gap-4 p-4">
-        {/* Main Cesium Viewer */}
-        <div className="flex-1 mission-panel overflow-hidden">
-          <CesiumViewer onEntityClick={handleEntityClick} />
+      <div className="flex-1 flex flex-col h-0">
+        {/* Main Content Area */}
+        <div className="flex-1 flex overflow-hidden px-4 pb-2">
+          {/* Cesium Viewer - takes most of the space */}
+          <div className="flex-1 rounded-lg overflow-hidden border">
+            <CesiumViewer onEntityClick={handleEntityClick} />
+          </div>
+
+          {/* Right Panel - fixed width, scrollable */}
+          <div className="w-96 ml-4 flex flex-col">
+            <div className="space-y-4 overflow-y-auto pr-1 flex-1">
+              <SatelliteInfo data={satelliteData} />
+              <FilterControls
+                filters={filters}
+                onFilterChange={setFilters}
+              />
+              
+              {loading && (
+                <div className="p-4 text-center text-muted-foreground">
+                  Loading conjunction data...
+                </div>
+              )}
+              
+              {error && (
+                <div className="p-4 text-center text-destructive">
+                  Error loading conjunction data: {error.message}
+                </div>
+              )}
+              
+              {!loading && !error && (
+                <ConjunctionList
+                  conjunctions={filteredConjunctions}
+                  onSelectConjunction={handleConjunctionSelect}
+                  selectedIndex={selectedConjunction}
+                />
+              )}
+            </div>
+          </div>
         </div>
 
-        {/* Right Info Panel */}
-        <div className="w-96 space-y-4 overflow-y-auto">
-          <SatelliteInfo data={satelliteData} />
-          <FilterControls filters={filters} onFilterChange={setFilters} />
-          <ConjunctionList
-            conjunctions={conjunctions}
-            onSelectConjunction={setSelectedConjunction}
+        {/* Timeline at the bottom */}
+        <div className="h-32 px-4 pb-2">
+          <TimelineControl
+            events={filteredConjunctions.map(c => ({
+              id: c.sat1.catalog.toString(),
+              time: c.tca_time,
+              risk: c.alert_level.toLowerCase() as 'high' | 'medium' | 'low'
+            }))}
+            currentTime={Date.now() / 1000}
+            timeWindow={Number(timeWindow)}
+            onTimeChange={() => {}}
+            onJumpToEvent={handleJumpToEvent}
           />
         </div>
-      </div>
-
-      {/* Bottom Timeline */}
-      <div className="p-4 pt-0">
-        <TimelineControl
-          events={timelineEvents}
-          currentTime={currentTime}
-          onTimeChange={setCurrentTime}
-          onJumpToEvent={handleJumpToEvent}
-        />
       </div>
     </div>
   );

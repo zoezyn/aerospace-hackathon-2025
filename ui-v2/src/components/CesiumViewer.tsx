@@ -55,48 +55,30 @@ export const CesiumViewer = ({ noradId = "40069", czmlData, onEntityClick }: Ces
     //   },
     // });
 
-    // Load TLE data and generate CZML
+    // Load CZML data from local file
     const loadSatelliteData = async () => {
       setIsLoading(true);
       setError(null);
 
       try {
-        if (czmlData) {
-          // Use provided CZML data
-          const dataSource = new Cesium.CzmlDataSource();
-          await dataSource.load(czmlData);
-          viewer.dataSources.add(dataSource);
-          setIsLoading(false);
-        } else {
-          // Fetch TLE data from CelesTrak
-          console.log(`Fetching TLE data for NORAD ID: ${noradId}`);
-          const tleData = await fetchTLEData(noradId);
+        // Load CZML from local file
+        const czmlPath = "/data/output.czml";
+        console.log(`Loading CZML from: ${czmlPath}`);
+        
+        const dataSource = new Cesium.CzmlDataSource();
+        await dataSource.load(czmlPath);
+        viewer.dataSources.add(dataSource);
 
-          if (tleData) {
-            console.log(`TLE data loaded: ${tleData.name}`);
+        // Enable clock animation
+        const startTime = new Date();
+        viewer.clock.startTime = Cesium.JulianDate.fromDate(startTime);
+        viewer.clock.currentTime = Cesium.JulianDate.fromDate(startTime);
+        viewer.clock.stopTime = Cesium.JulianDate.fromDate(new Date(startTime.getTime() + 180 * 60000));
+        viewer.clock.clockRange = Cesium.ClockRange.LOOP_STOP;
+        viewer.clock.multiplier = 60; // 60x speed
+        viewer.clock.shouldAnimate = true;
 
-            // Generate CZML from TLE for next 90 minutes (one orbit period approximately)
-            const startTime = new Date();
-            const czml = tleToCSML(tleData, startTime, 180);
-
-            const dataSource = new Cesium.CzmlDataSource();
-            await dataSource.load(czml);
-            viewer.dataSources.add(dataSource);
-
-            // Enable clock animation
-            viewer.clock.startTime = Cesium.JulianDate.fromDate(startTime);
-            viewer.clock.currentTime = Cesium.JulianDate.fromDate(startTime);
-            viewer.clock.stopTime = Cesium.JulianDate.fromDate(new Date(startTime.getTime() + 180 * 60000));
-            viewer.clock.clockRange = Cesium.ClockRange.LOOP_STOP;
-            viewer.clock.multiplier = 60; // 60x speed
-            viewer.clock.shouldAnimate = true;
-
-            setIsLoading(false);
-          } else {
-            setError("Failed to load TLE data");
-            setIsLoading(false);
-          }
-        }
+        setIsLoading(false);
       } catch (err) {
         console.error("Error loading satellite data:", err);
         setError("Error loading satellite data");
@@ -133,11 +115,6 @@ export const CesiumViewer = ({ noradId = "40069", czmlData, onEntityClick }: Ces
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             <span className="text-muted-foreground">Loading TLE Data...</span>
-          </div>
-        ) : error ? (
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-risk-high" />
-            <span className="text-risk-high">{error}</span>
           </div>
         ) : (
           <div className="flex items-center gap-2">
