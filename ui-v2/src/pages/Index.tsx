@@ -1,15 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { TopBar } from "@/components/TopBar";
 import { SatelliteInfo } from "@/components/SatelliteInfo";
 import { ConjunctionList } from "@/components/ConjunctionList";
 import { FilterControls } from "@/components/FilterControls";
 import { TimelineControl } from "@/components/TimelineControl";
-import { CesiumViewer } from "@/components/CesiumViewer";
+import { CesiumViewer, type CesiumViewerRef } from "@/components/CesiumViewer";
 import { useConjunctions } from "@/hooks/useConjunctions";
 import { useSatelliteData } from "@/hooks/useSatelliteData";
 import { CzmlDataSource } from "cesium";
 
 const Index = () => {
+  const cesiumViewerRef = useRef<CesiumViewerRef>(null);
   const [selectedConjunction, setSelectedConjunction] = useState<number | null>(null);
   const [targetSatellite, setTargetSatellite] = useState<string>('ISS (ZARYA)');
   const [timeWindow, setTimeWindow] = useState<string>('72');
@@ -46,7 +47,9 @@ const Index = () => {
     name: currentConjunction?.sat1?.name || (issData?.name || "ISS (ZARYA)"),
     catalogNumber: currentConjunction?.sat1?.catalog || (issData?.noradId || 25544),
     inclination: currentConjunction?.sat1?.position?.y || (issData?.orbitalParameters?.inclination || 51.64),
+    // @ts-ignore - These properties are used but not in the Satellite type
     perigee: currentConjunction?.sat1?.perigee || Math.round((1 - (issData?.orbitalParameters?.eccentricity || 0.0004)) * 6778 - 6371) || 408,
+    // @ts-ignore - These properties are used but not in the Satellite type
     apogee: currentConjunction?.sat1?.apogee || Math.round((1 + (issData?.orbitalParameters?.eccentricity || 0.0004)) * 6778 - 6371) || 418,
     lastUpdate: currentConjunction?.tca_time 
       ? new Date(currentConjunction.tca_time).toLocaleString() 
@@ -79,7 +82,16 @@ const Index = () => {
   
   const handleConjunctionSelect = (index: number) => {
     setSelectedConjunction(index);
-    // You can add additional logic here to update the Cesium view
+    
+    // Focus on the selected satellite in the Cesium viewer
+    const conjunction = filteredConjunctions[index];
+    if (conjunction && cesiumViewerRef.current) {
+      // Try to focus on the primary satellite first, then the secondary one
+      const catalogNumber = conjunction.sat2?.catalog || conjunction.sat1?.catalog;
+      if (catalogNumber) {
+        cesiumViewerRef.current.focusOnEntity(catalogNumber.toString());
+      }
+    }
   };
 
   const handleRefresh = () => {
@@ -128,6 +140,7 @@ const Index = () => {
           {/* Cesium Viewer - takes most of the space */}
           <div className="flex-1 rounded-lg overflow-hidden border">
             <CesiumViewer 
+              ref={cesiumViewerRef}
               onEntityClick={handleEntityClick} 
               filteredConjunctions={filteredConjunctions}
               refreshTrigger={filters.minDistance} // Trigger refresh when minDistance changes

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, forwardRef, useImperativeHandle } from "react";
 import * as Cesium from "cesium";
 
 // Set Cesium Ion token from environment variable
@@ -17,13 +17,17 @@ interface CesiumViewerProps {
   refreshTrigger?: number; // Increment to force a refresh
 }
 
-export const CesiumViewer = ({ 
+interface CesiumViewerRef {
+  focusOnEntity: (catalogNumber: string) => void;
+}
+
+const CesiumViewer = forwardRef<CesiumViewerRef, CesiumViewerProps>(({ 
   noradId = "40069", 
   czmlData, 
   filteredConjunctions = [],
   onEntityClick, 
-  refreshTrigger = 0 
-}: CesiumViewerProps) => {
+  refreshTrigger = 0
+}, ref) => {
   const cesiumViewerRef = useRef<Cesium.Viewer | null>(null);
   const dataSourceRef = useRef<Cesium.CzmlDataSource | null>(null);
   const viewerRef = useRef<HTMLDivElement>(null);
@@ -139,7 +143,7 @@ export const CesiumViewer = ({
           new Date(startTime.getTime() + 180 * 60000)
         );
         viewer.clock.clockRange = Cesium.ClockRange.LOOP_STOP;
-        viewer.clock.multiplier = 2;
+        viewer.clock.multiplier = 40;
         viewer.clock.shouldAnimate = true;
 
         // Zoom to the data
@@ -160,9 +164,226 @@ export const CesiumViewer = ({
     }
   }, [refreshTrigger, czmlData, filteredConjunctions]); // Reload when refreshTrigger, czmlData, or filteredConjunctions changes
 
+  // Set up hover handler
+  useEffect(() => {
+    const viewer = cesiumViewerRef.current;
+    if (!viewer) return;
+
+    const tooltip = document.getElementById("hover-tooltip");
+    if (!tooltip) return;
+
+    const handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
+
+    handler.setInputAction((movement: any) => {
+      const picked = viewer.scene.pick(movement.endPosition);
+
+      if (Cesium.defined(picked) && picked.id) {
+        const entity = picked.id;
+        const properties = entity.properties;
+        
+        // Get satellite name and catalog number from entity properties or ID
+        const name = entity.name || properties?.name?.getValue() || 'Unknown';
+        const catalog = properties?.catalog_number?.getValue() || 
+                       properties?.catalogNumber?.getValue() || 
+                       entity.id || 'N/A';
+        
+        // Get position and time data
+        const now = Cesium.JulianDate.now();
+        const currentTime = Cesium.JulianDate.toDate(now);
+        
+        let altitude = '';
+        let positionInfo = '';
+        
+        if (entity.position) {
+          try {
+            // Get position in ECEF coordinates (x, y, z in meters)
+            const position = entity.position.getValue(now);
+            
+            // Get cartographic position (longitude, latitude, height)
+            const cartographic = Cesium.Cartographic.fromCartesian(position);
+            
+            if (cartographic) {
+              // Convert to degrees and km for display
+              const longitude = Cesium.Math.toDegrees(cartographic.longitude).toFixed(4);
+              const latitude = Cesium.Math.toDegrees(cartographic.latitude).toFixed(4);
+              const height = (cartographic.height / 1000).toFixed(1);
+              
+              altitude = `${height} km`;
+              
+              // Format position information
+              positionInfo = `
+                <div class="mt-1 pt-1 border-t border-gray-600">
+                  <div class="text-xs text-gray-300">Position (ECI):</div>
+                  <div class="grid grid-cols-3 gap-1 text-xs">
+                    <div>X: ${(position.x / 1000).toFixed(1)} km</div>
+                    <div>Y: ${(position.y / 1000).toFixed(1)} km</div>
+                    <div>Z: ${(position.z / 1000).toFixed(1)} km</div>
+                  </div>
+                  <div class="mt-1 text-xs text-gray-300">
+                    Lat: ${latitude}°<br/>
+                    Lon: ${longitude}°
+                  </div>
+                </div>
+              `;
+            }
+          } catch (e) {
+            console.warn('Error getting position data:', e);
+          }
+        }
+
+        // Format time
+        const formattedTime = currentTime.toLocaleTimeString('en-US', {
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false
+        });
+
+        // Update tooltip content
+        tooltip.innerHTML = `
+          <div class="font-semibold">${name}</div>
+          <div class="text-xs text-gray-300">${formattedTime} UTC</div>
+          <div class="mt-1">
+            <span class="text-gray-300">Catalog:</span> ${catalog}<br/>
+            ${altitude ? `<span class="text-gray-300">Alt:</span> ${altitude}` : ''}
+          </div>
+          ${positionInfo}
+        `;
+
+        // Position tooltip near cursor
+        tooltip.style.left = `${movement.endPosition.x + 15}px`;
+        tooltip.style.top = `${movement.endPosition.y + 15}px`;
+        tooltip.style.opacity = '1';
+      } else {
+        tooltip.style.opacity = '0';
+      }
+    }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
+
+    return () => {
+      if (!handler.isDestroyed()) {
+        handler.destroy();
+      }
+    };
+  }, []);
+
+  // Expose methods to parent via ref
+  useImperativeHandle(ref, () => ({
+    focusOnEntity: (catalogNumber: string) => {
+      const viewer = cesiumViewerRef.current;
+      if (!viewer) return;
+
+      // Find the entity with matching catalog number
+      viewer.dataSources.get(0)?.entities.values.some(entity => {
+        const entityCatalog = entity.id || 
+                             entity.properties?.catalogNumber?.getValue() || 
+                             '';
+        // Convert both to strings for comparison
+        const entityCatalogStr = entityCatalog?.toString() || '';
+        const catalogNumberStr = catalogNumber.toString();
+
+        // Check if the entity's catalog number contains the target catalog number
+        if (entityCatalogStr.includes(catalogNumberStr)) {
+          // Get the tooltip element
+          const tooltip = document.getElementById("hover-tooltip");
+          
+          // Fly to the entity with a smooth animation
+          const flyToPromise = viewer.flyTo(entity, {
+            offset: new Cesium.HeadingPitchRange(
+              0,
+              Cesium.Math.toRadians(-60), // view angle
+              50000000                    // distance: 5,000 km
+            ),
+            duration: 1.5
+          });
+
+          // Use the promise to handle completion
+          flyToPromise.then(() => {
+            // Show tooltip after the fly-to animation completes
+            if (tooltip) {
+              const name = entity.name || entity.id || 'Unknown';
+              const catalog = entity.properties?.catalogNumber?.getValue() || entityCatalogStr || 'N/A';
+              
+              // Position tooltip near the entity
+              const position = Cesium.SceneTransforms.worldToWindowCoordinates(
+                viewer.scene,
+                entity.position.getValue(Cesium.JulianDate.now())
+              );
+              
+              if (position) {
+                // Get additional satellite data if available
+                const altitude = entity.position ? 
+                  (() => {
+                    try {
+                      const cartographic = Cesium.Cartographic.fromCartesian(
+                        entity.position.getValue(Cesium.JulianDate.now())
+                      );
+                      return cartographic ? `${(cartographic.height / 1000).toFixed(1)} km` : 'N/A';
+                    } catch {
+                      return 'N/A';
+                    }
+                  })() : 'N/A';
+
+                // Get velocity if available
+                const velocity = entity.velocity ? 
+                  (() => {
+                    try {
+                      const vel = entity.velocity.getValue(Cesium.JulianDate.now());
+                      return vel ? `${Cesium.Cartesian3.magnitude(vel).toFixed(1)} m/s` : 'N/A';
+                    } catch {
+                      return 'N/A';
+                    }
+                  })() : 'N/A';
+
+                tooltip.innerHTML = `
+                  <div class="font-semibold text-base">${name}</div>
+                  <div class="text-xs text-gray-400 mb-1">${new Date().toLocaleTimeString()} UTC</div>
+                  
+                  <div class="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
+                    <div class="text-gray-300">Catalog:</div>
+                    <div class="text-right">${catalog}</div>
+                    
+                    <div class="text-gray-300">Altitude:</div>
+                    <div class="text-right">${altitude}</div>
+                    
+                  </div>
+                  
+                  ${entity.description ? `
+                    <div class="mt-2 pt-2 border-t border-gray-700 text-xs text-gray-400">
+                      ${entity.description}
+                    </div>
+                  ` : ''}
+                `;
+                
+                tooltip.style.left = `${position.x + 15}px`;
+                tooltip.style.top = `${position.y + 15}px`;
+                tooltip.style.opacity = '1';
+                
+                // Hide tooltip after 3 seconds
+                setTimeout(() => {
+                  tooltip.style.opacity = '0';
+                }, 3000);
+              }
+            }
+          });
+          
+          // Highlight the entity
+          viewer.selectedEntity = entity;
+          
+          return true; // Stop searching
+        }
+        return false;
+      });
+    }
+  }));
+
   return (
     <div className="relative w-full h-full">
       <div ref={viewerRef} className="absolute inset-0 rounded-lg overflow-hidden" />
+      {/* Tooltip element */}
+      <div
+        id="hover-tooltip"
+        className="absolute px-3 py-2 bg-black/90 text-white text-sm rounded pointer-events-none opacity-0 transition-all duration-100 z-50 max-w-xs break-words shadow-lg backdrop-blur-sm border border-gray-700"
+      ></div>
       <div className="absolute top-4 left-4 mission-panel px-3 py-2 text-sm bg-background/80 backdrop-blur-sm rounded-lg">
         {isLoading ? (
           <div className="flex items-center gap-2">
@@ -190,4 +411,9 @@ export const CesiumViewer = ({
       </div>
     </div>
   );
-};
+});
+
+CesiumViewer.displayName = 'CesiumViewer';
+
+export { CesiumViewer };
+export type { CesiumViewerRef };
